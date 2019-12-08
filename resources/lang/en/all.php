@@ -24,7 +24,7 @@ return [
     'new'=> 'New verses',
     'popular'=> 'Popular verses',
     'full_list'=> 'All verses',
-    'left_'=> 'Left massage',
+    'left_'=> 'Poetry chat',
     'calendar'=> 'Calendar of events',
     'follow'=> 'Follow us',
 ];
