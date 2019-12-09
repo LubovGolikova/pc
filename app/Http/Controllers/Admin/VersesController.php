@@ -75,7 +75,55 @@ class VersesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+
+        $validator = \Validator::make($request->all(), [
+            'name'=>'required|min:3|max:150',
+            'content'=>'required',
+            //'audio'=>'mimes:audio/mp3,audio/mp4,audio/mpeg,audio/ogg,audio/mpeg3,audio/x-mpeg-3,video/x-mpeg,mpga',
+            'youtube' => [
+                'required',
+                'max:255',
+                function ($attribute, $value, $fail) {
+                    $rx = '~^(?:https?://)?(?:www[.])?(?:youtube[.]com/watch[?]v=|youtu[.]be/)([^&]{11})~x';
+                    if ( preg_match($rx, $value) === 0) {
+                        $fail($attribute.' is invalid.');
+                    }
+                },
+            ],
+            'audio' => [
+                function ($attribute, $value, $fail) {
+                    $arr = ['mp3', 'mpeg', 'ogg', 'mpeg3'];
+                        if ( !in_array($value->getClientOriginalExtension(), $arr)) {
+                        $fail($attribute.' is invalid.');
+                    }
+                },
+            ],
+        ]);
+
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $verse = Verse::find($id);
+        $verse->name = $request->name;
+        $verse->content = $request->content;
+        $verse->category_id = $request->category;
+        $verse->youtube = $request->youtube;
+        $audio = $request->file('audio');
+        if($audio){
+            $fName = time() . '_' . $audio->getClientOriginalName();
+            $audio->move('uploads/audio', $fName);
+            $verse->audio = 'uploads/audio/'.$fName;
+        }
+
+        $verse->path = $request->filepath;
+        $verse->likes = $request->likes;
+        $verse->views = $request->views;
+        $verse->writed_at = $request->writed_at;
+        $verse->approved = $request->approved ? 1 : 0;
+        $verse->save();
+        return redirect()->back()->with('success', 'Данные сохранены');
     }
 
     /**
