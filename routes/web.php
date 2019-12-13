@@ -16,6 +16,7 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
 
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/shop', 'ShopController@index')->name('shop');
+    Route::get('/about', 'AboutController@index');
     Route::get('/profile', 'UserController@profile')->name('profile');
     Route::post('/profile', 'UserController@profileSave');
     Route::get('/profile/account', 'UserController@account')->name('account');
@@ -29,6 +30,8 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
     Route::get('/verses/latest', 'VerseController@latestVerses');
     Route::get('/verses/popular', 'VerseController@popularVerses');
     Route::get('/verses', 'VerseController@allVerses');
+
+    Route::post('/contact/submit','MessageController@submit');
 
 });
 

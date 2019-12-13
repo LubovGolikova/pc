@@ -38,7 +38,7 @@
                 <a class="nav-link" href="#">{{ __('all.help') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">{{ __('all.about') }}</a>
+                <a class="nav-link" href="/about">{{ __('all.about') }}</a>
             </li>
         </ul>
             <form class=" my-2 my-lg-0 col-lg-6  search">
