@@ -69,4 +69,5 @@ Route::get('setlocale/{lang}', function ($lang) {
 Route::group(['prefix' => 'admin', 'namespace'=>"Admin", 'middleware'=>['auth', 'admin']], function() {
     Route::get('/', "AdminController@index");
     Route::resource('verses', "VersesController");
+    Route::resource('categories', "CategoriesController");
 });

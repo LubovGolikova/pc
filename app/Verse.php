@@ -14,4 +14,7 @@ class Verse extends Model
     {
         return $this->belongsTo('App\Category');
     }
+    public  function getYoutube(){
+        return substr($this->youtube, strrpos($this->youtube,'=')+1);
+    }
 }

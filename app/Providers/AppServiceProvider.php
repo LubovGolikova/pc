@@ -33,6 +33,17 @@ class AppServiceProvider extends ServiceProvider
                 'label'       => Verse::where('approved', '0')->count(),
                 'label_color' => 'success',
             ]);
+            $event->menu->add([
+                'text' => 'Add Verse',
+                'url' => 'admin/verses/create'
+            ]);
+
+
+            $event->menu->add('Categories');
+            $event->menu->add([
+                'text' => 'Categories',
+                'url' => 'admin/categories'
+            ]);
         });
     }
 }

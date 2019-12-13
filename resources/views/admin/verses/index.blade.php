@@ -34,7 +34,7 @@
                 <td>{{$verse->views}}</td>
                 <td>
                     <a class="btn btn-warning" href="/admin/verses/{{$verse->id}}/edit"> <i class="fa fa-edit"></i></a>
-                    <form action="/admin/flower/{{$verse->id}}" method="POST" class="inline">
+                    <form action="/admin/verses/{{$verse->id}}" method="POST" class="inline">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger" > <i class="fa fa-trash"></i></button>

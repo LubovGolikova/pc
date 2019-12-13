@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Verses</h1>
+    <h1>Categories</h1>
 @stop
 
 @section('content')
@@ -13,28 +13,20 @@
            <tr>
                 <th>#</th>
                 <th>Name</th>
-                <th>Category</th>
-                <th>Author</th>
-                <th>Approved</th>
-                <th>Likes</th>
-                <th>Views</th>
+                <th>Parent</th>
                 <th></th>
             </tr>
        </thead>
    
        <tbody>
-           @foreach($verses as $verse)
+           @foreach($categories as $category)
            <tr>
                 <td>{{$loop->iteration}}</td>
-                <td>{{$verse->name}}</td>
-                <td>{{$verse->category->name}}</td>
-                <td>{{$verse->user->name}}</td>
-                <td>{!!$verse->approved?'<i class="fa fa-chevron-down text-primary"></i>':''!!}</td>
-                <td>{{$verse->likes}}</td>
-                <td>{{$verse->views}}</td>
+                <td>{{$category->name}}</td>
+                <td>{{$category->getParentName()}}</td>
                 <td>
-                    <a class="btn btn-warning" href="/admin/verses/{{$verse->id}}/edit"> <i class="fa fa-edit"></i></a>
-                    <form action="/admin/verses/{{$verse->id}}" method="POST" class="inline">
+                    <a class="btn btn-warning" href="/admin/categories/{{$category->id}}/edit"> <i class="fa fa-edit"></i></a>
+                    <form action="/admin/categories/{{$category->id}}" method="POST" class="inline">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger" > <i class="fa fa-trash"></i></button>

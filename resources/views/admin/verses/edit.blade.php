@@ -7,98 +7,10 @@
 @stop
 
 @section('content')
-
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+    @include('admin.errors')
+    @include('admin.success')
     {!! Form::model($verse, ['route' => ['verses.update', $verse->id], 'files'=>true, 'method' => 'put']) !!}
-    <div class="row">
-    <div class="col-md-7">
-    <div class="box box-primary">
-    <div class="box-body">
-         <div class="form-group">
-            {!! Form::label('name', 'Name') !!}
-            {!! Form::text('name', null, ['class'=>'form-control']) !!}
-        </div>
-
-        <div class="form-group">
-            {!! Form::label('category', 'Category') !!}
-            {!! Form::select('category', $categories , null, ['class'=>'form-control']) !!}
-        </div>
-
-        <div class="form-group">
-            {!! Form::label('content', 'Content') !!}
-            {!! Form::textarea('content', null, ['class'=>'form-control']) !!}
-        </div>
-        </div>
-    </div></div>
-
-    <div class="col-md-5">
-     <div class="box box-primary">
-        <div class="box-body">
-        <div class="form-group form-check">
-            {!! Form::checkbox('approved', '1', null,['class'=>'form-check-input'] ) !!}
-            {!! Form::label('approved', 'Approved',['class'=>'form-check-label']) !!}
-        </div>
-
-            <div class="form-group">
-                {!! Form::label('writed_at', 'Writed') !!}
-                <div class="input-group date">
-                    <div class="input-group-addon">
-                        <i class="fa fa-calendar"></i>
-                    </div>
-
-
-                {!! Form::date('writed_at', null, ['class'=>"form-control pull-right" ]) !!}
-                </div>
-            </div>
-            <div class="form-group">
-                {!! Form::label('youtube', 'Youtube') !!}
-                {!! Form::text('youtube', null, ['class'=>'form-control']) !!}
-            </div>
-
-            <div class="form-group">
-             {!!Form::label('audio', 'Audio') !!}
-            @if($verse->audio)
-                <audio controls>
-                    <source src="/{{$verse->audio}}" type="audio/mpeg">
-                </audio>
-            @endif
-
-                {!! Form::file('audio', ['class'=>'form-control']) !!}
-            </div>
-
-            <div class="form-group">
-                            <div class="col offset-md-4">
-                <div class="input-group">
-                   <span class="input-group-btn">
-                     <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-                       <i class="fa fa-picture-o"></i> Choose
-                     </a>
-                   </span>
-                   <input id="thumbnail" class="form-control" type="text" name="filepath">
-                 </div>
-                 <img id="holder" style="margin-top:15px;max-height:100px;">
-            </div>
-            </div>
-
-            <div class="form-group">
-                {!! Form::label('likes', 'Likes') !!}
-                {!! Form::number('likes', null, ['class'=>'form-control']) !!}
-            </div>
-
-            <div class="form-group">
-                {!! Form::label('views', 'Views') !!}
-                {!! Form::number('views', null, ['class'=>'form-control']) !!}
-            </div>
-    </div>
-    </div></div></div>
+        @include('admin.verses.form')
 
     {!! Form::submit('Save', ['class'=>'btn btn-primary']) !!}
     {!! Form::close() !!}
@@ -119,4 +31,6 @@
    $('#lfm').filemanager('image');
 </script>
 @endsection
+
+
 

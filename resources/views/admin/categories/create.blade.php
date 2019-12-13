@@ -3,15 +3,15 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Create Verse</h1>
+    <h1>Create Category</h1>
 @stop
 
 @section('content')
 
  @include('admin.errors')
  @include('admin.success')
-    {!! Form::model($verse, ['route' => ['verses.store'], 'files'=>true]) !!}
-        @include('admin.verses.form')
+    {!! Form::model($category, ['route' => ['categories.store']]) !!}
+        @include('admin.categories.form')
         {!! Form::submit('Save', ['class'=>'btn btn-primary']) !!}
     {!! Form::close() !!}
 @stop

@@ -3,24 +3,16 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Edit {{$verse->name}}</h1>
+    <h1>Create Verse</h1>
 @stop
 
 @section('content')
 
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-    {!! Form::model($verse, ['route' => ['verses.update', $verse->id], 'files'=>true, 'method' => 'put']) !!}
+ @include('admin.errors')
+ @include('admin.success')
+    {!! Form::model($verse, ['route' => ['verses.store'], 'files'=>true]) !!}
         @include('admin.verses.form')
-
-    {!! Form::submit('Save', ['class'=>'btn btn-primary']) !!}
+        {!! Form::submit('Save', ['class'=>'btn btn-primary']) !!}
     {!! Form::close() !!}
 @stop
 
