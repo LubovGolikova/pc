@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Category;
+use Illuminate\Validation\Rule;
 class CategoriesController extends Controller
 {
     /**
@@ -39,7 +40,24 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $category = new Category();
+        $validator = \Validator::make($request->all(), [
+            'name' => [
+                'required',
+                'min:2',
+                'max:255',
+                'unique:categories'
+            ],
+        ]);
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $category->name = $request->name;
+        $category->slug = $request->name;
+        $category->parent_id = $request->parent_id;
+        $category->save();
+        return redirect()->back()->with('success', 'Данные сохранены');
     }
 
     /**
@@ -61,7 +79,9 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        $categories = Category::where('id', '!=', $id)->get()->pluck('name', 'id');
+        return view('admin.categories.edit', compact('categories', 'category'));
     }
 
     /**
@@ -73,7 +93,23 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::find($id);
+        $validator = \Validator::make($request->all(), [
+            'name' => [
+                'required',
+                'min:2',
+                'max:255',
+                Rule::unique('categories')->ignore($category->id),
+            ],
+        ]);
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $category->name = $request->name;
+        $category->parent_id = $request->parent_id;
+        $category->save();
+        return redirect()->back()->with('success', 'Данные сохранены');
     }
 
     /**
@@ -84,6 +120,7 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::find($id)->delete();
+        return redirect()->back();
     }
 }
