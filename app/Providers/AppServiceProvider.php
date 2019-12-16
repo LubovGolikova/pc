@@ -5,6 +5,7 @@ use Illuminate\Contracts\Events\Dispatcher;
 use JeroenNoten\LaravelAdminLte\Events\BuildingMenu;
 use Illuminate\Support\ServiceProvider;
 use App\Verse;
+use App\User;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -43,6 +44,22 @@ class AppServiceProvider extends ServiceProvider
             $event->menu->add([
                 'text' => 'Categories',
                 'url' => 'admin/categories'
+            ]);
+            $event->menu->add([
+                'text' => 'Add Category',
+                'url' => 'admin/categories/create'
+            ]);
+
+            $event->menu->add('USERS');
+            $event->menu->add([
+                'text' => 'Users',
+                'url' => 'admin/users',
+                'label'       => User::where('role', 'author')->count(),
+                'label_color' => 'success',
+            ]);
+            $event->menu->add([
+                'text' => 'Add User',
+                'url' => 'admin/users/create'
             ]);
         });
     }
