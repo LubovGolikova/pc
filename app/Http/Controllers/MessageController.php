@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class MessageController extends Controller
 {
-    public function submit()
+    public function submit(Request $request)
     {
-        return 123;
+        return $request->input('name');
     }
 }
