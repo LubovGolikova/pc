@@ -3,15 +3,15 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Create Category</h1>
+    <h1>Create User</h1>
 @stop
 
 @section('content')
 
  @include('admin.errors')
  @include('admin.success')
-    {!! Form::model($category, ['route' => ['categories.store']]) !!}
-        @include('admin.categories.form')
+    {!! Form::model($user, ['route' => ['users.store']]) !!}
+        @include('admin.users.form')
         {!! Form::submit('Save', ['class'=>'btn btn-primary']) !!}
     {!! Form::close() !!}
 @stop

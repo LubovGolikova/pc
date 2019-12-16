@@ -3,14 +3,14 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Edit {{$category->name}}</h1>
+    <h1>Edit {{$user->name}}</h1>
 @stop
 
 @section('content')
     @include('admin.errors')
     @include('admin.success')
-    {!! Form::model($category, ['route' => ['categories.update', $category->id], 'method' => 'put']) !!}
-        @include('admin.categories.form')
+    {!! Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'put']) !!}
+        @include('admin.users.form')
 
     {!! Form::submit('Save', ['class'=>'btn btn-primary']) !!}
     {!! Form::close() !!}
