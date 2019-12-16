@@ -73,4 +73,5 @@ Route::group(['prefix' => 'admin', 'namespace'=>"Admin", 'middleware'=>['auth', 
     Route::get('/', "AdminController@index");
     Route::resource('verses', "VersesController");
     Route::resource('categories', "CategoriesController");
+    Route::resource('users', "UserController");
 });
