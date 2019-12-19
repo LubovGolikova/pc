@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'role'
+        'name', 'email', 'password', 'role', 'description','fb_account','telegram_account','youtube_account','card','path'
     ];
 
     /**
@@ -43,5 +43,13 @@ class User extends Authenticatable
     public function getPathAttribute($value)
     {
         return $value ? $value : '/photos/nophoto.png' ;
+    }
+
+    public function setPasswordAttribute($value)
+    {
+        if($value=='')
+            $this->attributes['password'] = $this->password;
+        else
+            $this->attributes['password'] = \Hash::make($value);
     }
 }
