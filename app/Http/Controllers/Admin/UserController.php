@@ -26,7 +26,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $user = new User();
+        return view('admin.users.create', compact('user'));
     }
 
     /**
@@ -37,7 +38,63 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = \Validator::make($request->all(), [
+            'name'=>'required|min:3|max:150',
+            'email'=>'required|email|unique:users',
+            'password'=>'required|min:8',
+            'card'=>[
+                function ($attribute, $value, $fail) {
+                    if($value){
+                        $rx = '~^\\d{16}~x';
+                        if ( preg_match($rx, $value) === 0) {
+                            $fail($attribute.' is invalid.');
+                        }
+                    }
+                }
+            ],
+            'fb_account' => [
+                'max:255',
+                function ($attribute, $value, $fail) {
+                    if($value){
+                        $rx = '~^(?:https?://)?(?:www[.])?(?:facebook[.]com)~x';
+                        if ( preg_match($rx, $value) === 0) {
+                            $fail($attribute.' is invalid.');
+                        }
+                    }
+                },
+            ],
+
+            'telegram_account' => [
+                'max:255',
+                function ($attribute, $value, $fail) {
+                    if($value){
+                        $rx = '~^(?:https?://)?(?:www[.])?(?:telegram)~x';
+                        if ( preg_match($rx, $value) === 0) {
+                            $fail($attribute.' is invalid.');
+                        }
+                    }
+                },
+            ],
+            'youtube_account' => [
+                'max:255',
+                function ($attribute, $value, $fail) {
+                    if($value){
+                        $rx = '~^(?:https?://)?(?:www[.])?(?:youtube[.]com)~x';
+                        if ( preg_match($rx, $value) === 0) {
+                            $fail($attribute.' is invalid.');
+                        }
+                    }
+                },
+            ],
+        ]);
+
+
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        $user = (new User())->fill($request->all());
+        $user->save();
+        return redirect('/admin/users/'.$user->id.'/edit')->with('success', 'Данные сохранены');
     }
 
     /**
@@ -72,7 +129,63 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = \Validator::make($request->all(), [
+            'name'=>'required|min:3|max:150',
+            'email'=>'required|email',
+            'card'=>[
+                function ($attribute, $value, $fail) {
+                    if($value){
+                        $rx = '~^\\d{16}~x';
+                        if ( preg_match($rx, $value) === 0) {
+                            $fail($attribute.' is invalid.');
+                        }
+                    }
+                }
+            ],
+            'fb_account' => [
+                'max:255',
+                function ($attribute, $value, $fail) {
+                    if($value){
+                        $rx = '~^(?:https?://)?(?:www[.])?(?:facebook[.]com)~x';
+                        if ( preg_match($rx, $value) === 0) {
+                            $fail($attribute.' is invalid.');
+                        }
+                    }
+                },
+            ],
+
+            'telegram_account' => [
+                'max:255',
+                function ($attribute, $value, $fail) {
+                    if($value){
+                        $rx = '~^(?:https?://)?(?:www[.])?(?:telegram)~x';
+                        if ( preg_match($rx, $value) === 0) {
+                            $fail($attribute.' is invalid.');
+                        }
+                    }
+                },
+            ],
+            'youtube_account' => [
+                'max:255',
+                function ($attribute, $value, $fail) {
+                    if($value){
+                        $rx = '~^(?:https?://)?(?:www[.])?(?:youtube[.]com)~x';
+                        if ( preg_match($rx, $value) === 0) {
+                            $fail($attribute.' is invalid.');
+                        }
+                    }
+                },
+            ],
+        ]);
+
+
+         if($validator->fails()){
+             return redirect()->back()->withErrors($validator)->withInput();
+         }
+
+        $user = User::find($id)->fill($request->all());
+        $user->save();
+        return redirect()->back()->with('success', 'Данные сохранены');
     }
 
     /**
@@ -83,6 +196,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::find($id)->delete();
+        return redirect()->back();
     }
 }
