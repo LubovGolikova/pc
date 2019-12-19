@@ -30,6 +30,7 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
     Route::get('/verses/latest', 'VerseController@latestVerses');
     Route::get('/verses/popular', 'VerseController@popularVerses');
     Route::get('/verses', 'VerseController@allVerses');
+    Route::get('/verses/{id}', 'VerseController@showVerse');
 
     Route::post('/contact/submit','MessageController@submit');
 
