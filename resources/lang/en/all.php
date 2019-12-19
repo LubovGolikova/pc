@@ -19,7 +19,7 @@ return [
     'poetry'=> 'Poetry',
     'club'=> 'Club',
     'help'=> 'Help',
-    'about'=> 'Write us',
+    'about'=> 'Write to us',
     'author'=> 'Authors',
     'new'=> 'New verses',
     'popular'=> 'Popular verses',
