@@ -27,7 +27,7 @@
     filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
     filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
   };
-  CKEDITOR.replace('content', options);
+  CKEDITOR.replace('description', options);
    $('#lfm').filemanager('image');
 </script>
 @endsection
