@@ -156,4 +156,8 @@ class VerseController extends Controller
         $verses = Verse::where('user_id', '=', $id)->orderBy('created_at', 'DESC')->paginate(5);
         return view('verses.latest', compact('verses','title'));
     }
+    public function showVerse($id)
+    {
+        $verse = Verse::find($id);
+    }
 }
