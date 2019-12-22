@@ -2,6 +2,7 @@
 <div class="col-md-10 order-md-2">
      @yield('content')
 </div>
+
 <div class="col-md-2 order-md-1 bd-sidebar">
     <div class="row">
       <div class="col">

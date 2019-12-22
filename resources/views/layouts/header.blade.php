@@ -15,8 +15,9 @@
 
 </head>
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue">
+<div id="containerId">
+<header id="headerTotal">
+<nav  class="navbar navbar-expand-lg navbar-dark bg-dark-blue">
     <div  class="logo">
         <img src="{{asset('assets/PoetryClub.png')}}"
              alt="logoIcon"
@@ -79,6 +80,6 @@
     </div>
 </form>
 </nav>
-
-<div class="container-fluid">
-    <div class="row">
+</header>
+<section id="bodyContainer" class="container-fluid">
+    <div id="containerMenu" class="row">

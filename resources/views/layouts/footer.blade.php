@@ -1,8 +1,8 @@
 
     </div>
-</div>
-
-<footer class="footer-color d-flex flex-column   ">
+</section>
+<footer id ="footerId">
+<div class="footer-color ">
         <div class="footer-base d-flex flex-row justify-content-center align-items-center">
             <div class="col-3">
             <h3>{{ __('all.shop') }}</h3>
@@ -23,8 +23,11 @@
                  </div>
             </div>
         </div>
+        </div>
         <br>
+
 </footer>
+
 
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -77,7 +80,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 @yield('js')
+</div>
 </body>
-
-
 </html>
