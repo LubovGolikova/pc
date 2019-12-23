@@ -1,6 +1,13 @@
 @include('layouts.header')
 <div class="col-md-10 order-md-2">
      @yield('content')
+    <div class="last-views-verses">
+        <h3>last-views-verses</h3>
+        <div class="content-views-verses">
+
+        </div>
+    </div>
+
 </div>
 
 <div class="col-md-2 order-md-1 bd-sidebar">

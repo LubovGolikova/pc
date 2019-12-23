@@ -31,7 +31,9 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
     Route::get('/verses/popular', 'VerseController@popularVerses');
     Route::get('/verses', 'VerseController@allVerses');
     Route::get('/verses/{id}', 'VerseController@showVerse');
-
+    Route::get('/verses/{id}/addLike', 'VerseController@addLike');
+    Route::post('/verses/getViews', 'VerseController@getLastViews');
+    Route::get('/verses/category/{slug}', 'VerseController@showCategory');
     Route::post('/contact/submit','MessageController@submit');
 
 });

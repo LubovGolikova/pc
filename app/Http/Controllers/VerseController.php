@@ -145,6 +145,13 @@ class VerseController extends Controller
         return view('verses.latest', compact('verses','title'));
     }
 
+    public function showCategory($slug){
+        $category = Category::where('slug', $slug)->first();
+        $title = $category->name;
+        $verses = Verse::where('category_id', $category->id)->orderBy('created_at', 'DESC')->paginate(5);
+        return view('verses.latest', compact('verses','title'));
+    }
+
     public function authorsVerses(){
         $authors = User::where('role', '=', 'author')->paginate(30);
         return view('verses.authors', compact('authors'));
@@ -159,5 +166,30 @@ class VerseController extends Controller
     public function showVerse($id)
     {
         $verse = Verse::find($id);
+        $verse->views++;
+        $verse->save();
+        return view('verses.verse', compact('verse'));
+    }
+
+    public function addLike($id)
+    {
+        $verse = Verse::find($id);
+        $verse->likes++;
+        $verse->save();
+        echo $verse->likes;
+        exit;
+    }
+
+    public function getLastViews(Request $request)
+    {
+        $verses = [];
+//        echo gettype($request->ids);
+        if($request->ids!='null'){
+        foreach(json_decode($request->ids) as $id){
+            if($id)
+                $verses[] = Verse::find($id);
+        }
+        }
+        echo json_encode($verses);
     }
 }
