@@ -16,16 +16,13 @@
 </head>
 <body>
 <div id="containerId">
-<header id="headerTotal">
+<header id="headerTotal" class="py-md-5 pb-5">
 <nav  class="navbar navbar-expand-lg navbar-dark bg-dark-blue">
     <div  class="logo">
-        <img src="{{asset('assets/PoetryClub.png')}}"
-             alt="logoIcon"
-             height="92"
-             width="92"
-        >
+        <img src="{{asset('assets/images/logo.png')}}"
+             alt="logoIcon">
     </div>
-    <a class="navbar-brand " href="/">{{ __('all.poetry') }} <br>{{ __('all.club') }}</a>
+    {{--<a class="navbar-brand " href="/">{{ __('all.poetry') }} <br>{{ __('all.club') }}</a>--}}
     <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -80,6 +77,18 @@
     </div>
 </form>
 </nav>
+{{--<section class="header-main ">--}}
+{{--</section>--}}
+<div class="container mt-md-5">
+<img src="{{asset('assets/images/main-header.png')}}"
+             alt="logoIcon"
+             class="d-block mx-auto"
+        >
+<div class="row justify-content-center justify-content-md-end">
+    <a href="" class="btn btn-default mt-5">читати</a>
+</div>
+
+{{--</div>--}}
 </header>
-<section id="bodyContainer" class="container-fluid">
-    <div id="containerMenu" class="row">
+<section id="bodyContainer">
+

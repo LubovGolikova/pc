@@ -1,9 +1,21 @@
+@font-face {
+    font-family: "VIVADCL";
+    src: url("../assets/fonts/VIVADCL_.TTF") format("ttf")
+}
 #containerId{
     position: relative;
     height: 100%;
+
 }
 #headerTotal {
     flex: 0 0 auto;
+    background: url(../assets/images/book.jpg) no-repeat 0 0;
+    background-size: 100%;
+    min-height: 729px;
+
+}
+img{
+    max-width: 100%;
 }
 #bodyContainer {
     min-height: 100vh; /* will cover the 100% of viewport */
@@ -24,7 +36,7 @@
     height: 100%;
 }
 .bg-dark-blue{
-    background: #525C97;
+
     opacity: .9;
     position: relative;
     padding: 1rem 1rem;
@@ -147,4 +159,94 @@ a{
 
 .cover {
     object-fit: cover;
+}
+
+
+
+.btn-default{
+    background: #fff;
+    text-transform: uppercase;
+    border-radius: 3px;
+    box-shadow: 0 0 10px 4px rgba(0,0,0,0.5);
+    padding: .375rem 3.75rem;
+    float: right;
+    margin-right: 100px;
+}
+
+.header-main{
+    background: url(../assets/images/header.jpg) no-repeat 100% 0;
+    background-size:  contain;
+    min-height: 529px;
+}
+.row-1{
+     background: url(../assets/images/girl.jpg) no-repeat 100% 0;
+     background-size: contain;
+ }
+
+.row-2{
+
+}
+.books-row2{
+    position: absolute;
+    bottom: -65px;
+    right: -180px;
+    z-index: 10;
+}
+.calendar-home{
+    background: url(../assets/images/line.jpg) no-repeat 0 0;
+    min-height: 156px;
+    background-size: 100%;
+    text-align: center;
+}
+
+.calendar-home .row{
+    min-height: 156px;
+}
+.calendar-home .first-col{
+    color: #fff
+}
+.calendar-home .data{
+
+    font-size: 2em;
+}
+.bg-blue{
+    background: #b7cae6;
+}
+.width-100{
+    width: 100%
+}
+
+bloquote{
+    position: relative;
+}
+bloquote:before{
+    content: open-quote;
+    position: absolute;
+    left: -42px;
+    font-size: 62px;
+    top: -23px;
+    font-style: italic;
+    font-size: large;
+}
+
+
+
+
+@media screen and (max-width: 1100px){
+    .books-row2{
+        display: none;
+    }
+}
+
+
+
+@media screen and (max-width: 768px){
+    #headerTotal{
+        min-height: auto;
+        background-size: auto 100%;
+        background-position: 50% 0;
+    }
+    .btn-default{
+        margin-right: 0;
+    }
 }

@@ -1,5 +1,4 @@
 
-    </div>
 </section>
 <footer id ="footerId">
 <div class="footer-color ">
