@@ -1,27 +1,30 @@
 
 </section>
+
 <footer id ="footerId">
-<div class="footer-color ">
-        <div class="footer-base d-flex flex-row justify-content-center align-items-center">
-            <div class="col-3">
-            <h3>{{ __('all.shop') }}</h3>
-            </div>
-            <div class="col-3">
-             <h3>{{ __('all.help') }}</h3>
-            </div>
-            <div class="col-3">
-             <h3>{{ __('all.about') }}</h3>
-            </div>
+        <div  class="logo">
+            <img src="{{asset('assets/images/logo.png')}}"
+                 alt="logoIcon" class="d-block mx-auto   mb-2">
         </div>
+<div class="footer-color ">
+
         <div class="footer-bottom d-flex flex-column vertical-align-center  align-items-center ">
             <div class="footer-middle col-12">
-                <h3>{{ __('all.follow') }}</h3>
                 <div class="social">
                     <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                     <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                  </div>
             </div>
         </div>
+        <div class="footer-base d-flex flex-row justify-content-center align-items-center">
+
+                    <h3>{{ __('all.shop') }}</h3>
+
+                     <h3>{{ __('all.help') }}</h3>
+
+                     <h3>{{ __('all.about') }}</h3>
+
+                </div>
         </div>
         <br>
 

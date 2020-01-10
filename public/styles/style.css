@@ -1,13 +1,19 @@
 @font-face {
-    font-family: "VIVADCL";
+    font-family: "VivaldiD CL";
     src: url("../assets/fonts/VIVADCL_.TTF") format("ttf")
 }
 #containerId{
     position: relative;
     height: 100%;
 
+
 }
-#headerTotal {
+body{
+    background: url(../assets/images/bg.jpg) 0 100% no-repeat;
+    background-size: 100% 100%;}
+body.home-page {background: url(../assets/images/main-footer.jpg) 0 100% no-repeat;
+    background-size: 100% auto;}
+.home-page #headerTotal {
     flex: 0 0 auto;
     background: url(../assets/images/book.jpg) no-repeat 0 0;
     background-size: 100%;
@@ -22,13 +28,13 @@ img{
     overflow: hidden;
     display: block;
     position: relative;
-    padding-bottom: 300px; /* height of your footer */
+    padding-bottom: 220px; /* height of your footer */
 }
 #footerId{
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: #1B2562;
+
     opacity: .8;
 }
 #containerMenu{
@@ -124,11 +130,7 @@ a{
 .footerContainer{
 
 }
-.footer-color{
-    background-color: #1B2562;
-    opacity: .8;
 
-}
 .footer-color h3 {
     margin-bottom: 10px;
     padding: 10px;
@@ -193,21 +195,44 @@ a{
     z-index: 10;
 }
 .calendar-home{
-    background: url(../assets/images/line.jpg) no-repeat 0 0;
-    min-height: 156px;
-    background-size: 100%;
+    background: #b7cae6;
+
     text-align: center;
 }
 
-.calendar-home .row{
-    min-height: 156px;
-}
+
 .calendar-home .first-col{
-    color: #fff
+    color: #fff;
+    background: #404f6e;
+    position: relative;
+    font-family: "VivaldiD CL";
+    font-size: 2em;
+    line-height: 110%;
+}
+.calendar-home .first-col:after{
+   content:'';
+    display: block;
+    border: 56px solid;
+    border-color: transparent transparent transparent #404f6e;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+.calendar-home .first-col:before{
+    content:'';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: 300px;
+    height: 100%;
+    background: #404f6e;
 }
 .calendar-home .data{
-
+    font-family: "VivaldiD CL";
     font-size: 2em;
+    font-weight: 700;
+
 }
 .bg-blue{
     background: #b7cae6;
@@ -229,8 +254,88 @@ bloquote:before{
     font-size: large;
 }
 
+.home-footer{
+
+    background-size: 100% auto;
+}
+.home-footer h3{
+    font-size: 3em;
+}
+.home-footer h3 small{
+    display: block;
+    font-family: "VivaldiD CL";
+    font-size: .7em;
+    font-weight: 700;
+}
+.home-footer form{
+    background: rgba(255,255,255,0.5);
+    border: 1px solid #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5), inset 0 0 15px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 30px 0;
+}
+
+@supports (mix-blend-mode: lighten) {
+    .home-footer h3 span {
+        display: inline-block;
+        position: relative;
+        color: #000;
+        background: #fff;
+        mix-blend-mode: multiply;
+    }
+    .home-footer h3 span::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to right,#e59882, #faaa54, #ab7a7e, #c7958f, #b7a6c1);
+        pointer-events: none;
+    }
+    .home-footer h3 span::before {
+        mix-blend-mode: screen;
+    }
+}
 
 
+.container.authors{
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    margin-top: 15px;
+    border-radius: 15px;
+    padding: 10px 20px;
+}
+
+h1{
+    font-family: "VivaldiD CL";
+    font-size: 3em;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+    margin: 20px 0 30px 0
+}
+h1:before{
+    content: '';
+    display: block;
+    position: absolute;
+    top:50%;
+    left: 0;
+    right: 0;
+    border-top: 2px #ddd solid
+}
+h1 span{
+    background: #fff;
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.author img{
+    border-radius: 50%;
+}
 
 @media screen and (max-width: 1100px){
     .books-row2{
@@ -248,5 +353,15 @@ bloquote:before{
     }
     .btn-default{
         margin-right: 0;
+    }
+    .row-1{
+        background:none
+    }
+    .row-3 .col-md-4+.col-md-4{
+        margin-top: 30px
+    }
+    body{
+    background: url(../assets/images/main-footer.jpg) 25% 100% no-repeat;
+    background-size: auto;
     }
 }

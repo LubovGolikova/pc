@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{asset('styles/style.css')}}">
 
 </head>
-<body>
+<body class="home-page">
 <div id="containerId">
 <header id="headerTotal" class="py-md-5 pb-5">
 <nav  class="navbar navbar-expand-lg navbar-dark bg-dark-blue">

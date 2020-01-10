@@ -1,11 +1,13 @@
-@extends('...layouts.app')
+@extends('layouts.app')
 
 @section('content')
-<h1>Авторы</h1>
-    <div class="row flowers">
+<div class="container authors">
+<h1> <span>Авторы</span></h1>
+    <div class="row author">
     @foreach($authors as $author)
         <div class="col-md-3">
-            <a href="/verses/authors/{{$author->id}}" class=""> <img src="{{$author->path}}" class="img-fluid cover" style="width: 150px; height: 100px"></a>
+            <a href="/verses/authors/{{$author->id}}" class="">
+            <img src="{{$author->path}}" class="img-fluid cover"></a>
             <div>
                  <a href="/verses/authors/{{$author->id}}">{{$author->name}}</a><br>
 
@@ -15,6 +17,6 @@
         </div>
      @endforeach
     </div>
-
+</div>
     {{$authors->links()}}
 @endsection
