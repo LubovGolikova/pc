@@ -15,7 +15,6 @@ return [
 
     'login' => 'Вхiд',
     'email_address'=>'Email',
-    'shop' => 'Магазин',
     'poetry'=> 'Поетичний',
     'club'=> 'клуб',
     'help'=> 'Помiч',
@@ -27,6 +26,13 @@ return [
     'left_'=> 'Поетичний чат',
     'calendar'=> 'Календар подій',
     'follow'=> 'Слідкуйте за нами',
+
+    'home'=> 'Головна',
+    'authors'=> 'Автори',
+    'verses' => 'Вірші',
+    'shop' => 'Магазин',
+    'help'=> 'Помiч',
+    'registration' => 'Реєстрація',
 
 
 

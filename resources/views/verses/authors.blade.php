@@ -2,12 +2,12 @@
 
 @section('content')
 <div class="container authors">
-<h1> <span>Авторы</span></h1>
+<h1> <span>Нашi автори</span></h1>
     <div class="row author">
     @foreach($authors as $author)
         <div class="col-md-3">
             <a href="/verses/authors/{{$author->id}}" class="">
-            <img src="{{$author->path}}" class="img-fluid cover"></a>
+            <img src="{{$author->path}}" class="img-fluid cover img-thumbnail"></a>
             <div>
                  <a href="/verses/authors/{{$author->id}}">{{$author->name}}</a><br>
 

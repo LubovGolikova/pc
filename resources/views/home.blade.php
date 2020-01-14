@@ -8,7 +8,7 @@
             <div class="col-md-6">
 
                 <h3>твори наших авторів</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores dolor error excepturi obcaecati quaerat tempore! Maiores neque odit ullam!</p><p>Cum delectus dignissimos, doloribus exercitationem hic ipsa libero minus nam necessitatibus nostrum odio officiis, quibusdam, rerum sint temporibus totam velit.</p>
+                <p>Вони винні так само, як і ті, хто через душевну слабкість, тобто через бажання уникнути страждань і болю відмовляється від виконання свого обов’язку. Якщо скористатися найпростішим прикладом, </p><p>Дійсно, ніхто не відкидає, не зневажає, не уникає насолод тільки через те, що це насолоди, але лише через те, що тих, хто не вміє розумно вдаватися насолоді, осягають великі страждання. Якщо скористатися найпростішим прикладом, то хто з нас став би займатися якими б то не було тяжкими фізичними вправами</p>
                 <a class="btn btn-default" href="/verses/authors">Перейти</a>
             </div>
         </div>
@@ -89,12 +89,12 @@
                <form method="POST" action="{{ route('register') }}">
                                     @csrf
                                      <div  class="logo">
-                                        <img src="{{asset('assets/images/logo.png')}}"
+                                        <img src="{{asset('assets/images/lg.png')}}"
                                              alt="logoIcon" class="d-block mx-auto   mb-5">
                                     </div>
                                     <div class="form-group row">
                                         <div class="col">
-                                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  placeholder="{{ __('Name') }}" required autocomplete="name" autofocus>
+                                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  placeholder="{{ __('Name') }}" required autocomplete="name" >
 
                                             @error('name')
                                                 <span class="invalid-feedback" role="alert">

@@ -16,10 +16,10 @@
 </head>
 <body class="home-page">
 <div id="containerId">
-<header id="headerTotal" class="py-md-5 pb-5">
+<header id="headerTotal" class="py-md-2 pb-5">
 <nav  class="navbar navbar-expand-lg navbar-dark bg-dark-blue">
     <div  class="logo">
-        <img src="{{asset('assets/images/logo.png')}}"
+        <img src="{{asset('assets/images/lg.png')}}"
              alt="logoIcon">
     </div>
     {{--<a class="navbar-brand " href="/">{{ __('all.poetry') }} <br>{{ __('all.club') }}</a>--}}
@@ -28,28 +28,31 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto col-lg-3 pl-3">
+        <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
+                <a class="nav-link" href="/">{{ __('all.home') }}<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/verses/authors">{{ __('all.authors') }}<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/verses">{{ __('all.verses') }}<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="/shop">{{ __('all.shop') }}<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">{{ __('all.help') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/about">{{ __('all.about') }}</a>
+                <a class="nav-link" href="/about">{{ __('all.registration') }}</a>
             </li>
-        </ul>
-            <form class=" my-2 my-lg-0 col-lg-6  search">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </form>
-        <div class="form-inline my-2 my-lg-0 col-lg-3   langs">
             @guest
-                <a href="{{ route('login') }}" class="sign-in ml-lg-auto"><i class="fa fa-sign-in" aria-hidden="true"></i> {{ __('all.login') }}</a>
+                <li class="nav-item"><a  href="{{ route('login') }}" class="sign-in ml-lg-auto nav-link"><i class="fa fa-sign-in" aria-hidden="true"></i> {{ __('all.login') }}</a></li>
             @else
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <li class="nav-item"><a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }} <span class="caret"></span>
-                </a>
+                </a></li>
 
                 <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -65,6 +68,10 @@
                     </form>
                 </div>
             @endguest
+        </ul>
+
+        <div class="form-inline my-2 my-lg-0 col-lg-3   langs">
+
 
             <div class="ml-4">
                 <a href="<?= route('setlocale', ['lang' => 'ua']) ?>" <?= App\Http\Middleware\LocaleMiddleware::getLocale() === null ? 'class="active"' : '' ?>>Ua</a> |
@@ -77,6 +84,13 @@
     </div>
 </form>
 </nav>
+ <div class="search-line fluid container d-flex flex-row justify-content-center align-items-center">
+ <form class=" my-2 my-lg-0 col-lg-6  search form-inline" method="get" action="/search">
+                 <input class="form-control mr-sm-2" name="s" type="text" placeholder="Пошук" aria-label="Search">
+                 <button class="btn btn-outline-blue my-2 my-sm-0" type="submit">Найти</button>
+             </form>
+
+    </div>
 {{--<section class="header-main ">--}}
 {{--</section>--}}
 <div class="container mt-md-5">

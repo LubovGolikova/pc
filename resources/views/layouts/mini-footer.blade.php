@@ -3,7 +3,7 @@
 
 <footer id ="footerId">
         <div  class="logo">
-            <img src="{{asset('assets/images/logo.png')}}"
+            <img src="{{asset('assets/images/lg.png')}}"
                  alt="logoIcon" class="d-block mx-auto   mb-2">
         </div>
 <div class="footer-color ">

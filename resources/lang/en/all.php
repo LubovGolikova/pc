@@ -15,16 +15,25 @@ return [
 
     'login' => 'Enter',
     'email_address'=>'Email',
-    'shop' => 'Shop',
+
     'poetry'=> 'Poetry',
     'club'=> 'Club',
-    'help'=> 'Help',
+
     'about'=> 'Write to us',
-    'author'=> 'Authors',
+
     'new'=> 'New verses',
     'popular'=> 'Popular verses',
     'full_list'=> 'All verses',
     'left_'=> 'Poetry chat',
     'calendar'=> 'Calendar of events',
     'follow'=> 'Follow us',
+
+
+    'home'=> 'Home',
+    'authors'=> 'Authors',
+    'verses' => 'Verses',
+    'shop' => 'Shop',
+    'help'=> 'Help',
+    'registration' => 'Registration',
+
 ];

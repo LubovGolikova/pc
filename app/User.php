@@ -42,7 +42,14 @@ class User extends Authenticatable
     }
     public function getPathAttribute($value)
     {
-        return $value ? $value : '/photos/nophoto.png' ;
+        if($value) {
+            $path = $value; //photos/4/photo1.jpg
+            $arr = explode('/', $path);
+
+
+            return '/'.$arr[1] . '/' . $arr[2] . '/thumbs/' . $arr[3];
+        }
+        return  '/photos/nophoto.png' ;
     }
 
     public function setPasswordAttribute($value)
@@ -51,5 +58,11 @@ class User extends Authenticatable
             $this->attributes['password'] = $this->password;
         else
             $this->attributes['password'] = \Hash::make($value);
+    }
+
+    function getThumb(){
+        $path = $this->path; //photos/shares/photo1.jpg
+        $arr = explode('/', $path);
+        return $arr[1].'/'. $arr[2].'/thumbs/'. $arr[3];
     }
 }
