@@ -34,7 +34,6 @@
     </div>
 </section>
 
-
 <section class="row-3 py-5">
     <div class="container">
         <div class="row">
@@ -56,8 +55,6 @@
         </div>
     </div>
 </section>
-
-
 
     <section class="calendar-home my-5">
         <div class="container">
@@ -87,81 +84,86 @@
             <h3 class="text-center"><span>Як стати учасником</span> <small>поетичного клубу</small></h3>
 
                <form method="POST" action="{{ route('register') }}">
-                                    @csrf
-                                     <div  class="logo">
-                                        <img src="{{asset('assets/images/lg.png')}}"
-                                             alt="logoIcon" class="d-block mx-auto   mb-5">
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col">
-                                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  placeholder="{{ __('Name') }}" required autocomplete="name" >
+                @csrf
+                 <div  class="logo">
+                    <img src="{{asset('assets/images/lg.png')}}"
+                         alt="logoIcon" class="d-block mx-auto   mb-5">
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  placeholder="{{ __('Name') }}" required autocomplete="name" >
+                        @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
 
-                                            @error('name')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
+                <div class="form-group row">
+                      <div class="col">
+                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="{{ __('E-Mail Address') }}" required autocomplete="email">
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
 
-                                    <div class="form-group row">
-                                          <div class="col">
-                                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="{{ __('E-Mail Address') }}" required autocomplete="email">
+                <div class="form-group row">
 
-                                            @error('email')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
+                    <div class="col">
+                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  placeholder="{{ __('Password') }}" required autocomplete="new-password">
 
-                                    <div class="form-group row">
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
 
-                                        <div class="col">
-                                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  placeholder="{{ __('Password') }}" required autocomplete="new-password">
+                <div class="form-group row">
 
-                                            @error('password')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
+                    <div class="col">
+                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="{{ __('Confirm Password') }}" required autocomplete="new-password">
+                    </div>
+                </div>
 
-                                    <div class="form-group row">
+                <div class="form-group row">
+                    <div class="col ">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="role" value="author" id="role" {{ old('role') ? 'checked' : '' }}>
 
-                                        <div class="col">
-                                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="{{ __('Confirm Password') }}" required autocomplete="new-password">
-                                        </div>
-                                    </div>
+                            <label class="form-check-label" for="role">
+                                {{ __('Author?') }}
+                            </label>
+                        </div>
+                    </div>
+                </div>
 
-                                    <div class="form-group row">
-                                        <div class="col ">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="role" value="author" id="role" {{ old('role') ? 'checked' : '' }}>
+                <div class="form-group row mb-0">
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary btn-block">
+                            {{ __('Register') }}
+                        </button>
+                    </div>
+                </div>
 
-                                                <label class="form-check-label" for="role">
-                                                    {{ __('Author?') }}
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row mb-0">
-                                        <div class="col">
-                                            <button type="submit" class="btn btn-primary btn-block">
-                                                {{ __('Register') }}
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row mb-0 mt-3">
-                                        <div class="col-md-12 text-center">
-                                            {{ __('Have you got account?') }} <a class="" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                        </div>
-                                     </div>
-                                </form>
+                <div class="form-group row mb-0 mt-3">
+                    <div class="col-md-12 text-center">
+                        {{ __('Have you got account?') }} <a class="" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </div>
+                 </div>
+                <div class="form-group  mb-0 mt-3  text-center">
+                    <h2><span>Швидка авторизація через соцмережі</span></h2>
+                    <div class="social-home">
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-google"  aria-hidden="true"></i></a>
+                     </div>
+                </div>
+            </form>
         </div>
         </div>
         </div>

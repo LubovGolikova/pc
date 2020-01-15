@@ -24,8 +24,14 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
 
     Route::resource('/profile/verses', 'VerseController');
 
-    Route::get('/verses/authors/{id}', 'VerseController@authorVerses');
+
     Route::get('/verses/authors', 'VerseController@authorsVerses');
+    Route::get('/verses/authors/popular', 'VerseController@popularAuthorsVerses');
+    Route::get('/verses/authors/latest', 'VerseController@latestAuthorsVerses');
+    Route::get('/verses/authors/{id}', 'VerseController@authorVerses');
+
+
+
 
     Route::get('/verses/latest', 'VerseController@latestVerses');
     Route::get('/verses/popular', 'VerseController@popularVerses');

@@ -65,4 +65,14 @@ class User extends Authenticatable
         $arr = explode('/', $path);
         return $arr[1].'/'. $arr[2].'/thumbs/'. $arr[3];
     }
+    function   shortDescription(){
+        $str = strip_tags($this->description);
+        if(strlen($str)>120)
+            return substr($str, 0, 120).'...';
+        return $str;
+    }
+
+    public function verses(){
+        return $this->belongsTo('App\Verse');
+    }
 }

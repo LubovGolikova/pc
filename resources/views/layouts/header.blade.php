@@ -42,7 +42,7 @@
                 <a class="nav-link" href="/shop">{{ __('all.shop') }}<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">{{ __('all.help') }}</a>
+                <a class="nav-link" href="#">{{ __('all.contacts') }}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/about">{{ __('all.registration') }}</a>

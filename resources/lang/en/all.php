@@ -31,6 +31,7 @@ return [
 
     'home'=> 'Home',
     'authors'=> 'Authors',
+    'contacts'=>'Contacts',
     'verses' => 'Verses',
     'shop' => 'Shop',
     'help'=> 'Help',

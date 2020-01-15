@@ -30,6 +30,7 @@ return [
     'home'=> 'Главная',
     'authors'=> 'Авторы',
     'verses' => 'Стихи',
+    'contacts'=>'Контакты',
     'shop' => 'Магазин',
     'help'=> 'Помощь',
     'registration' => 'Регистрация',
