@@ -21,7 +21,7 @@
                 <i class="fa fa-eye" aria-hidden="true"></i> {{$verse->views}}</div>
             </h4>
             <div class="content">
-            {!! $verse->content !!}
+            {!! $verse->shortContent() !!}
             </div>
             Автор: <a href="#">{{$verse->user->name}}</a> <br/>
             Категория: <a href="#">{{$verse->category->name}}</a><br/>
@@ -31,6 +31,7 @@
         </article>
     @endforeach
     </div>
+    {{$verses->links()}}
     </div>
 @endsection
 

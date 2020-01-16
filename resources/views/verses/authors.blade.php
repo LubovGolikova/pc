@@ -14,14 +14,14 @@
 
     <div class="row author">
     @foreach($authors as $author)
-    {{$author->verses}}
+
         <div class="col-md-4 text-center">
             <a href="/verses/authors/{{$author->id}}" class="">
             <img src="{{$author->path}}" class="img-fluid cover img-thumbnail" style="max-width: 214px"></a>
             <div>
-                 <a href="/verses/authors/{{$author->id}}" class="author-name mt-3 d-block">{{$author->name}}</a><br>
+                 <a href="/profile/{{$author->id}}" class="author-name mt-3 d-block">{{$author->name}}</a><br>
                     <p>{{$author->shortDescription()}}</p>
-                 <a href="/verses/authors/{{$author->id}}" class="btn btn-default mx-auto d-inline-block float-none">read</a>
+                 {{--<a href="/verses/authors/{{$author->id}}" class="btn btn-default mx-auto d-inline-block float-none">read</a>--}}
             </div>
             <br>
         </div>

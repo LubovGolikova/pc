@@ -68,11 +68,14 @@ class User extends Authenticatable
     function   shortDescription(){
         $str = strip_tags($this->description);
         if(strlen($str)>120)
-            return substr($str, 0, 120).'...';
+            return mb_substr($str, 0, 120).'...';
         return $str;
     }
 
     public function verses(){
-        return $this->belongsTo('App\Verse');
+        return $this->hasMany('App\Verse', 'user_id');
+    }
+    public function books(){
+        return $this->hasMany('App\Book');
     }
 }

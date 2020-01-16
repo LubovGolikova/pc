@@ -17,4 +17,10 @@ class Verse extends Model
     public  function getYoutube(){
         return substr($this->youtube, strrpos($this->youtube,'=')+1);
     }
+    function   shortContent($len=350){
+        $str = $this->content;
+        if(strlen($str)>$len)
+            return mb_substr($str, 0, $len).'...';
+        return $str;
+    }
 }

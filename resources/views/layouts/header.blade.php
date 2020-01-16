@@ -45,14 +45,14 @@
                 <a class="nav-link" href="#">{{ __('all.contacts') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/about">{{ __('all.registration') }}</a>
+                <a class="nav-link" href="#">{{ __('all.registration') }}</a>
             </li>
             @guest
                 <li class="nav-item"><a  href="{{ route('login') }}" class="sign-in ml-lg-auto nav-link"><i class="fa fa-sign-in" aria-hidden="true"></i> {{ __('all.login') }}</a></li>
             @else
-                <li class="nav-item"><a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <li class="nav-item  position-relative"><a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }} <span class="caret"></span>
-                </a></li>
+                </a>
 
                 <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -66,7 +66,7 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
-                </div>
+                </div></li>
             @endguest
         </ul>
 

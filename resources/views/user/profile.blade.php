@@ -1,7 +1,8 @@
-@extends('layouts.app-full')
+@extends('layouts.app')
 
 @section('content')
-   <h1>Добро пожаловать, {{Auth::user()->name}}!</h1>
+<div class="container authors">
+   <h1><span>Добро пожаловать, {{Auth::user()->name}}!</span></h1>
     <div class="row">
         <div class="col-md-4"><a href="/profile/verses/create">Добавить стих</a></div>
         <div class="col-md-4"><a href="{{route('account')}}">Личные данные</a></div>
@@ -12,5 +13,5 @@
         <div class="col-md-4"><a href="{{route('account')}}">Личные данные</a></div>
         <div class="col-md-4"><a href="{{route('account')}}">Личные данные</a></div>
     </div>
-
+</div>
 @endsection

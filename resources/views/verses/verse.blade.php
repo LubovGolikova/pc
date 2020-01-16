@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>{{$verse->name}}</h1>
+<div class="container authors">
+    <h1><span>{{$verse->name}}</span></h1>
 
         <article>
             {!!$verse->content!!}
@@ -12,7 +13,7 @@
             <i class="fa fa-eye" aria-hidden="true"></i> {{$verse->views}}
         </article>
 
-
+</div>
 @endsection
 
 

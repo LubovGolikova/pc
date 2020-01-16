@@ -17,10 +17,13 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/shop', 'ShopController@index')->name('shop');
     Route::get('/about', 'AboutController@index');
+    Route::get('/help', 'HelpController@index');
     Route::get('/profile', 'UserController@profile')->name('profile');
     Route::post('/profile', 'UserController@profileSave');
     Route::get('/profile/account', 'UserController@account')->name('account');
     Route::post('/profile/account', 'UserController@accountUpdate');
+    Route::get('/profile/{id}', 'UserController@show');
+
 
     Route::resource('/profile/verses', 'VerseController');
 

@@ -6,23 +6,25 @@
             <img src="{{asset('assets/images/lg.png')}}"
                  alt="logoIcon" class="d-block mx-auto   mb-2">
         </div>
-<div class="footer-color ">
+<div class="footer-color-mini ">
 
         <div class="footer-bottom d-flex flex-column vertical-align-center  align-items-center ">
             <div class="footer-middle col-12">
-                <div class="social">
+                <div class="social-mini">
                     <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                     <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-telegram" aria-hidden="true"></i></a>
                  </div>
             </div>
         </div>
         <div class="footer-base d-flex flex-row justify-content-center align-items-center">
 
-                    <h3>{{ __('all.shop') }}</h3>
+                     <a class="nav-link" href="/shop"><h3>{{ __('all.shop') }}</h3></a>
 
-                     <h3>{{ __('all.help') }}</h3>
+                    <a class="nav-link" href="/help"><h3>{{ __('all.help') }}</h3></a>
 
-                     <h3>{{ __('all.about') }}</h3>
+                    <a class="nav-link" href="/about"><h3>{{ __('all.about') }}</h3></a>
 
                 </div>
         </div>

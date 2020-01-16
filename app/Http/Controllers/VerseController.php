@@ -128,20 +128,20 @@ class VerseController extends Controller
 
     public function latestVerses(){
         $title = 'Новые стихи';
-        $verses = Verse::orderBy('created_at', 'DESC')->paginate(5);
+        $verses = Verse::orderBy('created_at', 'DESC')->simplePaginate(9);
         return view('verses.latest', compact('verses','title'));
     }
 
 
     public function popularVerses(){
         $title = 'Популярные стихи';
-        $verses = Verse::orderBy('likes', 'DESC')->orderBy('views', 'DESC')->paginate(5);
+        $verses = Verse::orderBy('likes', 'DESC')->simplePaginate(9);
         return view('verses.latest', compact('verses','title'));
     }
     public function allVerses()
     {
         $title = 'Все стихи';
-        $verses = Verse::orderBy('likes', 'DESC')->orderBy('views', 'DESC')->paginate(5);
+        $verses = Verse::simplePaginate(9);
         return view('verses.latest', compact('verses','title'));
     }
 
@@ -159,7 +159,8 @@ class VerseController extends Controller
 
     public function popularAuthorsVerses(){
         //$authors = User::where('role', '=', 'author')->simplePaginate(9);
-        $authors = User::with('verse')->orderBy('verse.likes')->simplePaginate(9);
+        //$authors = User::where('verse'->sum('likes'))->orderBy('verse.likes')->simplePaginate(9);
+        $authors = User::where(sum('likes'))->orderBy('verse.likes')->simplePaginate(9);
         return view('verses.authors', compact('authors'));
     }
 

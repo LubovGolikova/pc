@@ -2,13 +2,12 @@
 
 @section('content')
 <div class="container authors">
-    <h1><span>Магазин</span></h1>
+   <h1><span>{{ __('all.help') }}</span></h1>
 
 
-</div>
+    </div>
+
 @endsection
-
-
 
 @section('js')
 

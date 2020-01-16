@@ -35,4 +35,9 @@ class UserController extends Controller
         return redirect('profile/account')->with('success', 'Данные сохранены');
     }
 
+    function show($id){
+        $user = User::find($id);
+        return view('user.show', compact('user'));
+    }
+
 }

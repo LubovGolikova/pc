@@ -20,11 +20,12 @@
         </div>
         <div class="footer-base d-flex flex-row justify-content-center align-items-center">
 
-                    <h3>{{ __('all.shop') }}</h3>
+                     <a class="nav-link" href="/shop"><h3>{{ __('all.shop') }}</h3></a>
 
-                     <h3>{{ __('all.help') }}</h3>
+                     <a class="nav-link" href="/help"><h3>{{ __('all.help') }}</h3></a>
 
-                     <h3>{{ __('all.about') }}</h3>
+
+                     <a class="nav-link" href="/about"> <h3>{{ __('all.about') }}</h3></a>
 
                 </div>
         </div>
