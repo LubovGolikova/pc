@@ -57,7 +57,6 @@ img{
     position: absolute;
     bottom: 0;
     width: 100%;
-
     opacity: .8;
 }
 #containerMenu{
@@ -150,7 +149,7 @@ img{
     margin: 0;
 }
 header .logo img{
-    width: 125px
+    width: 125px;
 }
 .sign-in{
     color: rgba(255,255,255,.5);
@@ -192,9 +191,6 @@ a{
     border: none
 }
 .navbar-expand-lg .navbar-nav .dropdown-menu{
-
-}
-.footerContainer{
 
 }
 
@@ -315,7 +311,9 @@ footer .social a:hover{
 .likes-views{
     font-size: 14px;
     color:#333;
-    margin-top: 10px;
+    margin-top: 0px;
+    margin-left: 4px;
+    padding-left: 34px;
 }
 
 .btn-default{
@@ -556,9 +554,54 @@ h2 span{
     border-width: 3px;
 }
 
+/*/////////////////////////*/
 
+h4{
+    font-size: 16px;
+    font-family: "Arial";
+    color: rgb(64, 79, 110);
+    line-height: 1.2;
+    text-align: left;
+    position: absolute;
+    text-decoration: none;
+}
+h4:hover,
+h4:not(:disabled):not(.disabled).active:focus,
+h4:not(:disabled):not(.disabled):active{
+    font-size: 16px;
+    font-family: "Arial";
+    color: rgb(64, 79, 110);
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: left;
+    position: absolute;
+    text-decoration: underline;
+}
+.tr{
+    font-size: 16px;
+    font-family: "Arial";
+    color: rgb(64, 79, 110);
+    line-height: 1.2;
+    text-align: left;
+    text-decoration: none;
+}
+.tr-active{
+    font-size: 16px;
+    font-family: "Arial";
+    color: rgb(64, 79, 110);
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: left;
+    text-decoration: underline;
+}
+.container-authors-full{
+    display: flex;
+    flex-direction: row;
 
-
+}
+.text-right {
+    text-align: left!important;
+}
 
 
 

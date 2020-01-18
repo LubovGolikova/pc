@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container authors">
+<div class="container authors mb-5">
    <h1><span>{{$user->name}}</span></h1>
    <div class="row">
     <div class="col-md-4">

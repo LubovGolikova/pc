@@ -158,9 +158,8 @@ class VerseController extends Controller
     }
 
     public function popularAuthorsVerses(){
-        //$authors = User::where('role', '=', 'author')->simplePaginate(9);
-        //$authors = User::where('verse'->sum('likes'))->orderBy('verse.likes')->simplePaginate(9);
-        $authors = User::where(sum('likes'))->orderBy('verse.likes')->simplePaginate(9);
+        //need remake
+        $authors = User::simplePaginate(9);
         return view('verses.authors', compact('authors'));
     }
 

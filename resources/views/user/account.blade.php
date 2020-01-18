@@ -1,7 +1,9 @@
-@extends('layouts.app-full')
+@extends('layouts.app')
 
 @section('content')
-    <h1>Личные данные</h1>
+<div class="container authors mb-5">
+    <h1><span>Личные данные</span></h1>
+    <div class="text-center">
     @if( session('success') )
     <div class="alert alert-success">{{session('success')}}</div>
     @endif
@@ -80,6 +82,9 @@
             </div>
         </div>
     </form>
+    <br>
+    </div>
+</div>
 @endsection
 
 

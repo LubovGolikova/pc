@@ -45,7 +45,7 @@
                 <a class="nav-link" href="#">{{ __('all.contacts') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">{{ __('all.registration') }}</a>
+                <a class="nav-link" href="/register">{{ __('all.registration') }}</a>
             </li>
             @guest
                 <li class="nav-item"><a  href="{{ route('login') }}" class="sign-in ml-lg-auto nav-link"><i class="fa fa-sign-in" aria-hidden="true"></i> {{ __('all.login') }}</a></li>
@@ -99,7 +99,7 @@
              class="d-block mx-auto"
         >
 <div class="row justify-content-center justify-content-md-end">
-    <a href="" class="btn btn-default mt-5">читати</a>
+    <a  href="/verses" class="btn btn-default mt-5">читати</a>
 </div>
 
 {{--</div>--}}
