@@ -159,6 +159,13 @@ class VerseController extends Controller
 
     public function popularAuthorsVerses(){
         //need remake
+        /*$authors = \DB::table('users')
+            ->leftJoin('verses', 'users.id', '=', 'verses.user_id')
+            ->select('users.*', \DB::raw('SUM(verses.likes) as likes'))
+            ->groupBy('users.id')
+            ->orderBy('likes', 'DESC')
+            ->get();
+        */
         $authors = User::simplePaginate(9);
         return view('verses.authors', compact('authors'));
     }
