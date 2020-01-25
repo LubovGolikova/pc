@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Create Verse</h1>
+    <h1>Создать стих</h1>
 @stop
 
 @section('content')

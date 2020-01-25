@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Edit {{$verse->name}}</h1>
+    <h1>Редактировать {{$verse->name}}</h1>
 @stop
 
 @section('content')

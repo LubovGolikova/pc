@@ -39,5 +39,11 @@ class UserController extends Controller
         $user = User::find($id);
         return view('user.show', compact('user'));
     }
+    public function search(Request $request){
+        $s = $request->s;
+        $user=User::where('name','LIKE', '%'.$s.'%')->simplepaginate(12);
 
+       //dd($users);
+        return view('search',compact('user', 's'));
+    }
 }

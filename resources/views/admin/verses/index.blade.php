@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Verses</h1>
+    <h1>Стихи</h1>
 @stop
 
 @section('content')

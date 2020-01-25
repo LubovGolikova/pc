@@ -23,6 +23,7 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
     Route::get('/profile/account', 'UserController@account')->name('account');
     Route::post('/profile/account', 'UserController@accountUpdate');
     Route::get('/profile/{id}', 'UserController@show');
+    Route::get('/search', "UserController@search");
 
 
     Route::resource('/profile/verses', 'VerseController');

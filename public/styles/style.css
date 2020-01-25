@@ -603,8 +603,17 @@ h4:not(:disabled):not(.disabled):active{
     text-align: left!important;
 }
 
-
-
+.bg-book {
+    color:red;
+}
+h6{
+    font-size: 12px;
+    font-family: "ArialNarrow";
+    color: rgb(144, 151, 161);
+    font-style: italic;
+    line-height: 1.2;
+    text-align: left;
+}
 
 
 
