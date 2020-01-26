@@ -4,17 +4,12 @@
 <div class="container authors">
    <h1><span>Результаты поиска</span></h1>
 
-    {{--<div class="row">--}}
-
-    {{--@foreach($users as $user)--}}
-        {{--<div class="col-md-3">--}}
+    @foreach($users as $user)
+        <div class="col-md-3">
         <p> {{$user->name}}</p>
 
-            {{--</div>--}}
-            {{--<br>--}}
-        {{--</div>--}}
-     {{--@endforeach--}}
-    {{--</div>--}}
+            </div>
+     @endforeach
     </div>
 
 @endsection

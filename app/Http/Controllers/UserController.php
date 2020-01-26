@@ -41,9 +41,7 @@ class UserController extends Controller
     }
     public function search(Request $request){
         $s = $request->s;
-        $user=User::where('name','LIKE', '%'.$s.'%')->simplepaginate(12);
-
-       //dd($users);
-        return view('search',compact('user', 's'));
+        $users=User::where('name','LIKE', '%'.$s.'%')->simplepaginate(12);
+        return view('search',compact('users', 's'));
     }
 }

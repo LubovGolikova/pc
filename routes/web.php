@@ -26,6 +26,11 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
     Route::get('/search', "UserController@search");
 
 
+    Route::get('/social-auth/{provider}', 'Auth\SocialController@redirectToProvider')->name('auth.social');
+    Route::get('/social-auth/{provider}/callback', 'Auth\SocialController@handleProviderCallback')->name('auth.social.callback');
+
+
+
     Route::resource('/profile/verses', 'VerseController');
 
 
