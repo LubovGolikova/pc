@@ -39,6 +39,7 @@ class SocialController extends Controller
         $user = User::create([
             'name' => $socialiteUser->getName(),
             'email' => $socialiteUser->getEmail(),
+            'role' => 'guest',
             'password' => bcrypt(str_random(25)),
         ]);
 

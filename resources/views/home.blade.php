@@ -159,8 +159,8 @@
                 <div class="form-group  mb-0 mt-3  text-center">
                     <h2><span>Швидка авторизація через соцмережі</span></h2>
                     <div class="social-home">
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-google"  aria-hidden="true"></i></a>
+                        <a href="{{ route('auth.social', 'facebook') }}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="{{ route('auth.social', 'google') }}"><i class="fa fa-google"  aria-hidden="true"></i></a>
                      </div>
                 </div>
             </form>

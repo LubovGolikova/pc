@@ -38,5 +38,10 @@ return [
         'client_secret' => '698ebba65e6c588b740b6fad5c5dc190',
         'redirect' => '/social-auth/facebook/callback',
     ],
+    'google' => [
+        'client_id' => '1012448563452-08b7nvoviil8ripor0u7t4gipu7ieav6.apps.googleusercontent.com',
+        'client_secret' => 'o6UTOVlWzhLUq-C786NWDjto',
+        'redirect' => '/social-auth/google/callback',
+    ],
 
 ];
