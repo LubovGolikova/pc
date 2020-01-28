@@ -26,6 +26,12 @@ return [
     'follow'=> 'Cледите за нами',
 
 
+    'name' => 'Псевдоним',
+    'password' => 'Пароль',
+    'Confirm Password' => 'Подтверждение пароля',
+    'Author?'=>'Автор?',
+
+
 
     'home'=> 'Главная',
     'authors'=> 'Авторы',
@@ -34,4 +40,8 @@ return [
     'shop' => 'Магазин',
     'help'=> 'Помощь',
     'registration' => 'Регистрация',
+    'Have you got account?' => 'Есть ли у Вас аккаунт?',
+    'Fast authorization' =>'Быстрая авторизация через соцсети',
+    'How to become a participant' => 'Как стать участником',
+    'poetryclub' => 'поэтического клуба'
 ];

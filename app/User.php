@@ -45,8 +45,6 @@ class User extends Authenticatable
         if($value) {
             $path = $value; //photos/4/photo1.jpg
             $arr = explode('/', $path);
-
-
             return '/'.$arr[1] . '/' . $arr[2] . '/thumbs/' . $arr[3];
         }
         return  '/photos/nophoto.png' ;

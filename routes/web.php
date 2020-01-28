@@ -16,6 +16,8 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
 
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/shop', 'ShopController@index')->name('shop');
+    Route::get('/book/{id}', "ShopController@showProduct");
+
     Route::get('/about', 'AboutController@index');
     Route::get('/help', 'HelpController@index');
     Route::get('/profile', 'UserController@profile')->name('profile');

@@ -2,8 +2,9 @@
 
 @section('content')
 <div class="container authors mb-5">
-    <h1><span>{{$verse->name}}</span></h1>
-
+    <h1><span>{{$verse->user->name}}</span></h1>
+<div class="bg-verse">
+    <div class="row">
         <article>
             {!!$verse->content!!}
             <a href="/verses/authors/{{$verse->user->id}}">{{$verse->user->name}}</a>
@@ -12,7 +13,8 @@
             <i class="fa fa-heart-o add-like" aria-hidden="true" data-id="{{$verse->id}}"></i> <span class="like-count">{{$verse->likes}}</span>
             <i class="fa fa-eye" aria-hidden="true"></i> {{$verse->views}}
         </article>
-
+    </div>
+</div>
 </div>
 @endsection
 

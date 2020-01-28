@@ -6,9 +6,8 @@
 
     @foreach($users as $user)
         <div class="col-md-3">
-        <p> {{$user->name}}</p>
-
-            </div>
+            <p> {{$user->name}}</p>
+        </div>
      @endforeach
     </div>
 

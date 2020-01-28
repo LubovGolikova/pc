@@ -24,7 +24,6 @@
 
                      <a class="nav-link" href="/help"><h3>{{ __('all.help') }}</h3></a>
 
-
                      <a class="nav-link" href="/about"> <h3>{{ __('all.about') }}</h3></a>
 
                 </div>

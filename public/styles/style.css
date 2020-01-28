@@ -614,10 +614,21 @@ h6{
     line-height: 1.2;
     text-align: left;
 }
+/*/////////////////*/
 
-
-
-
+.bg-verse{
+    background: url(../assets/images/bg-verse.jpg) no-repeat 100% 0;
+    position: relative;
+    z-index: 10;
+    background-size: 100% 100%;
+}
+.bg-pink{
+    color: red;
+    background: url(../assets/images/bg-book.jpg) no-repeat 100% 0;
+    position: relative;
+    z-index: 10;
+    background-size: 100% 100%;
+}
 
 
 

@@ -36,24 +36,16 @@
 
 <section class="row-3 py-5">
     <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h3>твори наших авторів</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores dolor error excepturi obcaecati quaerat tempore! Maiores neque odit ullam!</p><p>Cum delectus dignissimos, doloribus exercitationem hic ipsa libero minus nam necessitatibus nostrum odio officiis, quibusdam, rerum sint temporibus totam velit.</p>
-                <a class="btn btn-default mt-3" href="">Читати</a>
+            <div class="row">
+                 @foreach($verses as $verse)
+                    <div class="col-md-4">
+                        <h3>{{$verse->name}}</h3>
+                        <p>{!!$verse->shortContent()!!}</p>
+                        {{--<a class="btn btn-default mt-3" href="">Читати</a>--}}
+                    </div>
+                  @endforeach
             </div>
-            <div class="col-md-4">
-                <h3>твори наших авторів</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores dolor error excepturi obcaecati quaerat tempore! Maiores neque odit ullam!</p><p>Cum delectus dignissimos, doloribus exercitationem hic ipsa libero minus nam necessitatibus nostrum odio officiis, quibusdam, rerum sint temporibus totam velit.</p>
-                <a class="btn btn-default mt-3" href="">Читати</a>
-            </div>
-            <div class="col-md-4">
-                <h3>твори наших авторів</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores dolor error excepturi obcaecati quaerat tempore! Maiores neque odit ullam!</p><p>Cum delectus dignissimos, doloribus exercitationem hic ipsa libero minus nam necessitatibus nostrum odio officiis, quibusdam, rerum sint temporibus totam velit.</p>
-                <a class="btn btn-default mt-3" href="">Читати</a>
-            </div>
-        </div>
-    </div>
+     </div>
 </section>
 
     <section class="calendar-home my-5">
@@ -81,7 +73,7 @@
     <div class="container">
         <div class="row">
         <div class="col-md-6 offset-md-3">
-            <h3 class="text-center"><span>Як стати учасником</span> <small>поетичного клубу</small></h3>
+            <h3 class="text-center"><span>{{ __('all.How to become a participant')}}</span> <small>{{ __('all.poetryclub') }}</small></h3>
 
                <form method="POST" action="{{ route('register') }}">
                 @csrf
@@ -91,7 +83,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="col">
-                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  placeholder="{{ __('Name') }}" required autocomplete="name" >
+                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  placeholder="{{ __('all.name') }}" required autocomplete="name" >
                         @error('name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -102,7 +94,7 @@
 
                 <div class="form-group row">
                       <div class="col">
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="{{ __('E-Mail Address') }}" required autocomplete="email">
+                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="{{ __('all.email_address') }}" required autocomplete="email">
                         @error('email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -114,7 +106,7 @@
                 <div class="form-group row">
 
                     <div class="col">
-                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  placeholder="{{ __('Password') }}" required autocomplete="new-password">
+                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  placeholder="{{ __('all.password') }}" required autocomplete="new-password">
 
                         @error('password')
                             <span class="invalid-feedback" role="alert">
@@ -127,7 +119,7 @@
                 <div class="form-group row">
 
                     <div class="col">
-                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="{{ __('Confirm Password') }}" required autocomplete="new-password">
+                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="{{ __('all.Confirm Password') }}" required autocomplete="new-password">
                     </div>
                 </div>
 
@@ -137,7 +129,7 @@
                             <input class="form-check-input" type="checkbox" name="role" value="author" id="role" {{ old('role') ? 'checked' : '' }}>
 
                             <label class="form-check-label" for="role">
-                                {{ __('Author?') }}
+                                {{ __('all.Author?') }}
                             </label>
                         </div>
                     </div>
@@ -146,18 +138,18 @@
                 <div class="form-group row mb-0">
                     <div class="col">
                         <button type="submit" class="btn btn-primary btn-block">
-                            {{ __('Register') }}
+                            {{ __('all.registration') }}
                         </button>
                     </div>
                 </div>
 
                 <div class="form-group row mb-0 mt-3">
                     <div class="col-md-12 text-center">
-                        {{ __('Have you got account?') }} <a class="" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        {{ __('all.Have you got account?') }} <a class="" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </div>
                  </div>
                 <div class="form-group  mb-0 mt-3  text-center">
-                    <h2><span>Швидка авторизація через соцмережі</span></h2>
+                    <h2><span>{{ __('all.Fast authorization') }}</span></h2>
                     <div class="social-home">
                         <a href="{{ route('auth.social', 'facebook') }}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                         <a href="{{ route('auth.social', 'google') }}"><i class="fa fa-google"  aria-hidden="true"></i></a>

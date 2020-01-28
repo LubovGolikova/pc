@@ -37,4 +37,15 @@ return [
     'help'=> 'Help',
     'registration' => 'Registration',
 
+    'name' => 'Nickname',
+    'password' => 'Password',
+    'Confirm Password' => 'Confirm Password',
+    'Author?'=>'Author?',
+    'Have you got account?' => 'Have you got account?',
+    'Fast authorization' =>'Fast authorization through social networks',
+    'How to become a participant' => 'How to become a participant',
+    'poetryclub' => 'poetry club',
+
+
+
 ];

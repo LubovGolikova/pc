@@ -17,16 +17,15 @@
         {{$user->description}}
     </div>
    </div>
-
-        <h3>Збірки віршів</h3>
+    <h3>Збірки віршів</h3>
         <div class="row">
-        @foreach($user->books as $book)
-        <div class="col-md-3">
-        <div class="bg-book">
-            @include('shop.book')
-            </div>
+            @foreach($user->books as $book)
+                <div class="col-md-3">
+                    <div class="bg-book">
+                        @include('shop.book')
+                    </div>
+                </div>
+            @endforeach
         </div>
-        @endforeach
-    </div>
 </div>
 @endsection

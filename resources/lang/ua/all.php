@@ -35,6 +35,13 @@ return [
     'help'=> 'Помiч',
     'registration' => 'Реєстрація',
 
-
+    'name' => 'Псевдонім ',
+    'password' => 'Пароль',
+    'Confirm Password' => 'Підтвердження пароля',
+    'Author?'=>'Автор?',
+    'Have you got account?' => 'Чи є у Вас аккаунт?',
+    'Fast authorization' =>'Швидка авторизація через соцмережі',
+    'How to become a participant' => 'Як стати учасником',
+    'poetryclub' => 'поетичного клубу',
 
 ];

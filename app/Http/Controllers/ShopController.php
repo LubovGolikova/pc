@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Book;
 class ShopController extends Controller
 {
     /**
@@ -19,6 +19,11 @@ class ShopController extends Controller
      */
     public function index()
     {
-        return view('shop.index');
+        $books=Book::simplePaginate(9);
+        return view('shop.index',compact('books'));
+    }
+    function showProduct($id){
+        $book = Book::find($id);
+        return view('shop.showBook', compact('book'));
     }
 }

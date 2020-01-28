@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Verse;
 
 class HomeController extends Controller
 {
@@ -19,6 +20,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $verses=Verse::orderBy('views','DESC')->simplePaginate(3);
+        return view('home', compact('verses'));
     }
 }
