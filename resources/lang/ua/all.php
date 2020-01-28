@@ -43,5 +43,6 @@ return [
     'Fast authorization' =>'Швидка авторизація через соцмережі',
     'How to become a participant' => 'Як стати учасником',
     'poetryclub' => 'поетичного клубу',
+    'chat'=>'Чат',
 
 ];

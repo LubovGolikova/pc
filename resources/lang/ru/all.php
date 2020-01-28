@@ -43,5 +43,6 @@ return [
     'Have you got account?' => 'Есть ли у Вас аккаунт?',
     'Fast authorization' =>'Быстрая авторизация через соцсети',
     'How to become a participant' => 'Как стать участником',
-    'poetryclub' => 'поэтического клуба'
+    'poetryclub' => 'поэтического клуба',
+    'chat'=>'Чат'
 ];

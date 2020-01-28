@@ -34,7 +34,7 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
 
 
     Route::resource('/profile/verses', 'VerseController');
-
+    Route::resource('/profile/books', 'BookController');
 
     Route::get('/verses/authors', 'VerseController@authorsVerses');
     Route::get('/verses/authors/popular', 'VerseController@popularAuthorsVerses');
@@ -52,6 +52,10 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
     Route::post('/verses/getViews', 'VerseController@getLastViews');
     Route::get('/verses/category/{slug}', 'VerseController@showCategory');
     Route::post('/contact/submit','MessageController@submit');
+
+    Route::get('/chat', 'ChatsController@index');
+    Route::get('messages', 'ChatsController@fetchMessages');
+    Route::post('messages', 'ChatsController@sendMessage');
 
 });
 

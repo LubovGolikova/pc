@@ -26,6 +26,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(Dispatcher $events)
     {
+        \Schema::defaultStringLength(191);
         $events->listen(BuildingMenu::class, function (BuildingMenu $event) {
             $event->menu->add('VERSE');
             $event->menu->add([

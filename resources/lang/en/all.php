@@ -45,6 +45,7 @@ return [
     'Fast authorization' =>'Fast authorization through social networks',
     'How to become a participant' => 'How to become a participant',
     'poetryclub' => 'poetry club',
+    'chat'=>'chat'
 
 
 
