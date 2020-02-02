@@ -44,5 +44,7 @@ return [
     'How to become a participant' => 'Як стати учасником',
     'poetryclub' => 'поетичного клубу',
     'chat'=>'Чат',
+    'logout'=>'вийти',
+    'profile'=>'профіль'
 
 ];

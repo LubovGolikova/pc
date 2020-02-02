@@ -16,6 +16,7 @@
     <h3>Биография</h3>
         {{$user->description}}
     </div>
+    <a href="/verses/authors/{{$user->id}}"> Усi вiршi автора {{$user->name}}</a>
    </div>
     <h3>Збірки віршів</h3>
         <div class="row">

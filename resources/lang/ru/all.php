@@ -44,5 +44,7 @@ return [
     'Fast authorization' =>'Быстрая авторизация через соцсети',
     'How to become a participant' => 'Как стать участником',
     'poetryclub' => 'поэтического клуба',
-    'chat'=>'Чат'
+    'chat'=>'Чат',
+    'logout'=>'выйти',
+    'profile'=>'профиль'
 ];

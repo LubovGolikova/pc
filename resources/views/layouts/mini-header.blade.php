@@ -15,12 +15,12 @@
 
 </head>
 <body>
-<a href="{{ route('auth.social', 'facebook') }}" title="Facebook">
-    <i class="fa fa-2x fa-facebook-square"></i>
-</a>
-<a href="{{ route('auth.social', 'google') }}" title="Facebook">
-    <i class="fa fa-2x fa fa-google"></i>
-</a>
+{{--<a href="{{ route('auth.social', 'facebook') }}" title="Facebook">--}}
+    {{--<i class="fa fa-2x fa-facebook-square"></i>--}}
+{{--</a>--}}
+{{--<a href="{{ route('auth.social', 'google') }}" title="Facebook">--}}
+    {{--<i class="fa fa-2x fa fa-google"></i>--}}
+{{--</a>--}}
 <div id="containerId">
 <header id="headerTotal" class="py-md-2 pb-5">
 <nav  class="navbar navbar-expand-lg navbar-dark bg-dark-blue">
