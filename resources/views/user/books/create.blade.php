@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container authors mb-5">
-    <h1><span>Добавить стих</span></h1>
+    <h1><span>Добавить книгу</span></h1>
     @if( session('success') )
     <div class="alert alert-success">{{session('success')}}</div>
     @endif
