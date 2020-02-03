@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a30b5680-d464-49a3-b64d-489945f9a038" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/en/all.php" afterPath="$PROJECT_DIR$/resources/lang/en/all.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/ru/all.php" afterPath="$PROJECT_DIR$/resources/lang/ru/all.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/ua/all.php" afterPath="$PROJECT_DIR$/resources/lang/ua/all.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/mini-header.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/mini-header.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/profile.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/profile.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/show.blade.php" />
-    </list>
+    <list default="true" id="a30b5680-d464-49a3-b64d-489945f9a038" name="Default" comment="" />
     <ignored path="poetryclub.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -629,7 +622,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="196" y="294" width="1557" height="735" extended-state="0" />
+    <frame x="196" y="294" width="1557" height="735" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12445887" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
