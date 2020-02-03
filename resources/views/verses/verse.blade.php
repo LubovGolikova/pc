@@ -1,20 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container authors mb-5">
-    <h1><span>{{$verse->user->name}}</span></h1>
-<div class="bg-verse">
-    <div class="row">
-        <article>
-            {!!$verse->content!!}
-            <a href="/verses/authors/{{$verse->user->id}}">{{$verse->user->name}}</a>
-            <a href="/verses/category/{{$verse->category->slug}}">{{$verse->category->name}}</a>
-            <i class="fa fa-calendar" aria-hidden="true"></i>{{\Carbon\Carbon::parse($verse->created_at)->format('d.m.Y')}}
-            <i class="fa fa-heart-o add-like" aria-hidden="true" data-id="{{$verse->id}}"></i> <span class="like-count">{{$verse->likes}}</span>
-            <i class="fa fa-eye" aria-hidden="true"></i> {{$verse->views}}
-        </article>
+<div class="test">
+    <div class="container authors verse mb-5">
+        <h1><span>{{$verse->user->name}}</span></h1>
+        <div class="bg-verse-container">
+    <div class="bg-verse">
+        <div class="verse-part-container">
+            <div class="verse-part left">
+                <p>
+    Вони винні так само, як і ті, хто через душевну слабкість, тобто через бажання уникнути страждань і болю відмовляється від виконання свого обов’язку.
+     Але щоб ви зрозуміли, звідки виникає це хибне уявлення людей, цуратись насолоди і вихваляти страждання, я розкрию перед вами всю картину і роз’ясню, що саме говорив цей чоловік.
+    Вони винні так само, як і ті, хто через душевну слабкість, тобто через бажання уникнути страждань і болю відмовляється від виконання свого обов’язку.
+     Але щоб ви зрозуміли, звідки виникає це хибне уявлення людей, цуратись насолоди і вихваляти страждання, я розкрию перед вами всю картину і роз’ясню, що саме говорив цей чоловік.        </div>
+           </p>
+            <div class="verse-part right">
+
+                <p>
+    Вони винні так само, як і ті, хто через душевну слабкість, тобто через бажання уникнути страждань і болю відмовляється від виконання свого обов’язку.
+     Але щоб ви зрозуміли, звідки виникає це хибне уявлення людей, цуратись насолоди і вихваляти страждання, я розкрию перед вами всю картину і роз’ясню, що саме говорив цей чоловік.
+    Вони винні так само, як і ті, хто через душевну слабкість, тобто через бажання уникнути страждань і болю відмовляється від виконання свого обов’язку.
+     Але щоб ви зрозуміли, звідки виникає це хибне уявлення людей, цуратись насолоди і вихваляти страждання, я розкрию перед вами всю картину і роз’ясню, що саме говорив цей чоловік.        </div>
+            </p>
+           </div>
+        </div>
+           {{-- <article>
+                {!!$verse->content!!}
+                <a href="/verses/authors/{{$verse->user->id}}">{{$verse->user->name}}</a>
+                <a href="/verses/category/{{$verse->category->slug}}">{{$verse->category->name}}</a>
+                <i class="fa fa-calendar" aria-hidden="true"></i>{{\Carbon\Carbon::parse($verse->created_at)->format('d.m.Y')}}
+                <i class="fa fa-heart-o add-like" aria-hidden="true" data-id="{{$verse->id}}"></i> <span class="like-count">{{$verse->likes}}</span>
+                <i class="fa fa-eye" aria-hidden="true"></i> {{$verse->views}}
+            </article>--}}
     </div>
-</div>
+    </div>
+    </div>
 </div>
 @endsection
 

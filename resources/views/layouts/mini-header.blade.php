@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/slick/slick.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset('assets/slick/slick-theme.css')}}"/>
     <link rel="stylesheet" href="{{asset('styles/style.css')}}">
-
+    <link rel="stylesheet" href="{{asset('styles/verse.style.sass')}}">
 </head>
 <body>
 {{--<a href="{{ route('auth.social', 'facebook') }}" title="Facebook">--}}
