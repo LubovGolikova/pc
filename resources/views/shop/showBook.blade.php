@@ -9,6 +9,8 @@
                 </div>
                 <div class="col-md-8">
                 {{$book->price}} грн.
+                <br>
+                {{$book->description}}
                 </div>
                 <button class="btn btn-default-shop mt-5 mb-5 ml-5">Купить</button>
             </div>

@@ -18,7 +18,7 @@ class VerseController extends Controller
     public function index()
     {
         $title = 'Все стихи';
-        $verses = Verse::orderBy('likes', 'DESC')->orderBy('views', 'DESC')->paginate(5);
+        $verses = Verse::orderBy('likes', 'DESC')->orderBy('views', 'DESC')->simplePaginate(5);
         return view('verses.latest', compact('verses','title'));
     }
 
@@ -158,7 +158,7 @@ class VerseController extends Controller
     public function showCategory($slug){
         $category = Category::where('slug', $slug)->first();
         $title = $category->name;
-        $verses = Verse::where('category_id', $category->id)->orderBy('created_at', 'DESC')->paginate(5);
+        $verses = Verse::where('category_id', $category->id)->orderBy('created_at', 'DESC')->simplePaginate(5);
         return view('verses.latest', compact('verses','title'));
     }
 

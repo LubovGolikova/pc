@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container authors">
+<div class="container authors  mb-5">
     <h1><span>Магазин поезії</span></h1>
     <div class="row books">
 
@@ -16,11 +16,14 @@
                             <h5>{{$book->price}} грн.</h5>
                             <a href="/book/{{$book->id}}"> <button class="btn btn-default-shop mt-3 mr-3">Купить</button></a>
                         </div>
+                        <br>
                  </div>
+                 <br>
              </div>
 
         @endforeach
     </div>
+      {{$books->links()}}
 </div>
 @endsection
 
