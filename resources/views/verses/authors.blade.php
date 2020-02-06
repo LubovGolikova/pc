@@ -18,7 +18,6 @@
                         <div>
                              <a href="/profile/{{$author->id}}" class="author-name mt-3 d-block">{{$author->name}}</a><br>
                                 <p>{{$author->shortDescription()}}</p>
-                             {{--<a href="/verses/authors/{{$author->id}}" class="btn btn-default mx-auto d-inline-block float-none">read</a>--}}
                         </div>
                         <br>
                     </div>

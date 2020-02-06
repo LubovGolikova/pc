@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container authors mb-5">
-    <h1><span>Добавить стих</span></h1>
+    <h1><span>{{ __('all.addVerse') }}</span></h1>
     @if( session('success') )
     <div class="alert alert-success">{{session('success')}}</div>
     @endif
@@ -19,7 +19,7 @@
         @csrf
 
         <div class="form-group row">
-            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('all.nameVerse') }}</label>
 
             <div class="col">
                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required>
@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-group row">
-            <label for="category" class="col-md-4 col-form-label text-md-right">Категория</label>
+            <label for="category" class="col-md-4 col-form-label text-md-right">{{ __('all.category') }}</label>
             <div class="col">
                 <select class="form-control" name="category" id="category">
                 @foreach($categories as $category)
@@ -42,11 +42,24 @@
             </div>
         </div>
 
-        <div class="form-group row">
-            <label for="content" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
+        {{--<div class="form-group row">--}}
+            {{--<label for="content" class="col-md-4 col-form-label text-md-right">{{ __('all.Description') }}</label>--}}
+            {{--<div class="col">--}}
+            {{--<textarea name="content" id="content" cols="30" rows="10" class="form-control @error('content') is-invalid @enderror">{{ old('content')}}</textarea>--}}
+                {{--@error('content')--}}
+                    {{--<span class="invalid-feedback" role="alert">--}}
+                        {{--<strong>{{ $message }}</strong>--}}
+                    {{--</span>--}}
+                {{--@enderror--}}
+
+            {{--</div>--}}
+        {{--</div>--}}
+
+    <div class="form-group row">
+            <label for="contentVerse" class="col-md-4 col-form-label text-md-right">{{ __('all.Description') }}</label>
             <div class="col">
-            <textarea name="content" id="content" cols="30" rows="10" class="form-control @error('content') is-invalid @enderror">{{ old('content') }}</textarea>
-                @error('content')
+            <textarea name="contentVerse" id="contentVerse" cols="30" rows="10" class="form-control @error('description') is-invalid @enderror">{{ old('contentVerse')}}</textarea>
+                @error('contentVerse')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -54,9 +67,8 @@
             </div>
         </div>
 
-
         <div class="form-group row">
-            <label for="youtube" class="col-md-4 col-form-label text-md-right">Видео</label>
+            <label for="youtube" class="col-md-4 col-form-label text-md-right">{{ __('all.video') }}</label>
 
             <div class="col">
                 <input id="youtube" type="text" class="form-control @error('youtube') is-invalid @enderror" name="youtube" value="{{ old('youtube') }}">
@@ -69,10 +81,10 @@
         </div>
 
          <div class="form-group row">
-            <label for="audio" class="col-md-4 col-form-label text-md-right">Аудио</label>
+            <label for="audio" class="col-md-4 col-form-label text-md-right">{{ __('all.audio') }}</label>
 
             <div class="col">
-                <input id="audio" type="file" class="form-control @error('audio') is-invalid @enderror" name="audio">
+                <input id="audio" type="text" class="form-control @error('audio') is-invalid @enderror" name="audio" value="{{ old('audio') }}">
                 @error('audio')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -88,7 +100,7 @@
         <div class="input-group">
            <span class="input-group-btn">
              <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-               <i class="fa fa-picture-o"></i> Choose
+               <i class="fa fa-picture-o"></i> {{ __('all.Choose') }}
              </a>
            </span>
            <input id="thumbnail" class="form-control" type="text" name="filepath">
@@ -103,7 +115,7 @@
         <div class="form-group row mb-0">
             <div class="col offset-md-4">
                 <button type="submit" class="btn btn-primary btn-block">
-                    {{ __('Save') }}
+                    {{ __('all.Save') }}
                 </button>
             </div>
         </div>

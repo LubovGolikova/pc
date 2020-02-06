@@ -15,11 +15,21 @@
     <div class="col-md-8">
     <h3>Биография</h3>
         {{$user->description}}
+        <br>
+        <br>
     </div>
-    <a href="/verses/authors/{{$user->id}}"> Усi вiршi автора {{$user->name}}</a>
    </div>
-    <h3>Збірки віршів</h3>
-        <div class="row">
+   <div class="col">
+        <a href="/verses/authors/{{$user->id}}"> Усi вiршi автора {{$user->name}}</a>
+             <br>
+             <br>
+        <a href="/"> <button class="btn btn-default-shop mt-3 mr-3">Підписатися</button></a>
+    </div>
+   <div class="author-book-header">
+   <h3>Збірки віршів</h3>
+   </div>
+
+        <div class="row mb-5">
             @foreach($user->books as $book)
                 <div class="col-md-3">
                     <div class="bg-book">
@@ -28,5 +38,8 @@
                 </div>
             @endforeach
         </div>
+         <div class="search-line fluid container d-flex flex-row justify-content-center align-items-center mb-5">
+          <a href="/shop"> <button class="btn btn-outline-blue my-2 my-sm-0 mb-5">ПЕРЕЙТИ В МАГАЗИН</button></a>
+          </div>
 </div>
 @endsection

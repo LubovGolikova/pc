@@ -16,7 +16,7 @@ class CreateVersesTable extends Migration
         Schema::create('verses', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->text('content');
+            $table->text('contentVerse');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('category_id')->nullable();
             $table->string('youtube')->nullable();

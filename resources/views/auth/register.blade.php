@@ -78,7 +78,7 @@
 
                         <div class="form-group row mb-0 mt-3">
                             <div class="col-md-8 offset-md-4 text-center">
-                                {{ __('all.Have you got account?') }} <a class="" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                {{ __('all.Have you got account?') }} <a class="" href="{{ route('login') }}">{{ __('all.login') }}</a>
                             </div>
                          </div>
                          <div class="form-group  mb-0 mt-3  text-center">

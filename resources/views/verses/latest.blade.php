@@ -4,8 +4,8 @@
 <div class="container authors mb-5">
     <h1> <span>{{$title}}</span></h1>
 
-    <div class="container-authors-full">
-           <div class="text-left px-5 d-flex flex-column mb-5">
+    <div class="container-authors-full ">
+           <div class=" menu text-left px-5 d-flex flex-column mb-5">
                <a href="/verses" class="tr {{Request::is('verses')?'tr-active':''}}" >Все</a><br>
                <a href="/verses/popular" class="tr  {{Request::is('verses/popular')?'tr-active':''}}" >Популярные</a><br>
                <a href="/verses/latest" class=" tr {{Request::is('verses/latest')?'tr-active':''}}" >Новые</a>

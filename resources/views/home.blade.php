@@ -39,9 +39,8 @@
             <div class="row">
                  @foreach($verses as $verse)
                     <div class="col-md-4">
-                        <h3>{{$verse->name}}</h3>
+                        <a href="/verses/{{$verse->id}}" ><h3 >{{$verse->name}}</h3></a>
                         <p>{!!$verse->shortContent()!!}</p>
-                        {{--<a class="btn btn-default mt-3" href="">Читати</a>--}}
                     </div>
                   @endforeach
             </div>

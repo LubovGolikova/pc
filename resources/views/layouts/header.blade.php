@@ -22,7 +22,6 @@
         <img src="{{asset('assets/images/lg.png')}}"
              alt="logoIcon">
     </div>
-    {{--<a class="navbar-brand " href="/">{{ __('all.poetry') }} <br>{{ __('all.club') }}</a>--}}
     <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -42,7 +41,7 @@
                 <a class="nav-link" href="/shop">{{ __('all.shop') }}<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">{{ __('all.contacts') }}</a>
+                <a class="nav-link" href="/help">{{ __('all.contacts') }}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/register">{{ __('all.registration') }}</a>
@@ -86,13 +85,12 @@
 </nav>
  <div class="search-line fluid container d-flex flex-row justify-content-center align-items-center">
  <form class=" my-2 my-lg-0 col-lg-6  search form-inline" method="get" action="/search">
-                 <input class="form-control mr-sm-2" name="s" type="text" placeholder="Пошук" aria-label="Search">
+                 <input class="form-control mr-sm-2" name="s" type="text" placeholder={{ __('all.search') }} aria-label="Search">
                  <button class="btn btn-outline-blue my-2 my-sm-0" type="submit">Найти</button>
              </form>
 
     </div>
-{{--<section class="header-main ">--}}
-{{--</section>--}}
+
 <div class="container mt-md-5">
 <img src="{{asset('assets/images/main-header.png')}}"
              alt="logoIcon"
@@ -102,7 +100,6 @@
     <a  href="/verses" class="btn btn-default mt-5">читати</a>
 </div>
 
-{{--</div>--}}
 </header>
 <section id="bodyContainer">
 

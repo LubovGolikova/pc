@@ -15,6 +15,9 @@ return [
 
     'login' => 'Вхiд',
     'email_address'=>'Email',
+    'Remember Me'=>'Пам\'ятай мене',
+    'Forgot Your Password?'=>'Забули свій пароль?',
+    'No account?'=>'Немає акаунта?',
     'poetry'=> 'Поетичний',
     'club'=> 'клуб',
     'help'=> 'Помiч',
@@ -45,6 +48,21 @@ return [
     'poetryclub' => 'поетичного клубу',
     'chat'=>'Чат',
     'logout'=>'вийти',
-    'profile'=>'профіль'
+    'profile'=>'профіль',
+    'Description'=>'Опис',
+    'Save'=>'Зберегти',
+    'data'=>'Особисті дані',
+    'Choose'=>'Вибрати',
+    'search'=>'Пошук',
 
+    'addVerse'=>'Добавити вірш',
+    'nameVerse'=>'Назва вірша',
+    'category'=>'Категорiя',
+    'video'=>'Вiдео',
+    'audio'=>'Аудіо',
+    'addBook'=>'Добавити книгу',
+    'nameBook'=>'Назва книги',
+    'file'=>'Файл',
+    'welcome'=>'Ласкаво просимо',
+    'price'=>'Ціна',
 ];

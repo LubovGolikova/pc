@@ -44,8 +44,18 @@ class VerseController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name'=>'required|min:3|max:150',
-            'content'=>'required',
-            'audio'=>'mimetypes:audio/mp4,audio/mpeg,audio/ogg',
+            'contentVerse'=>'required',
+//            'audio'=>'mimetypes:audio/mp4,audio/mpeg,audio/ogg',
+            'audio' => [
+                'required',
+                'max:255',
+                function ($attribute, $value, $fail) {
+                    $rx = '/((http:\/\/(soundcloud\.com\/.*|soundcloud\.com\/.*\/.*|soundcloud\.com\/.*\/sets\/.*|soundcloud\.com\/groups\/.*|snd\.sc\/.*))|(https:\/\/(soundcloud\.com\/.*|soundcloud\.com\/.*\/.*|soundcloud\.com\/.*\/sets\/.*|soundcloud\.com\/groups\/.*)))/i';
+                    if ( preg_match($rx, $value) === 0) {
+                        $fail($attribute.' is invalid.');
+                    }
+                },
+            ],
             'youtube' => [
                 'required',
                 'max:255',
@@ -64,15 +74,15 @@ class VerseController extends Controller
 
         $verse = new Verse();
         $verse->name = $request->name;
-        $verse->content = $request->content;
+        $verse->contentVerse = $request->contentVerse;
         $verse->category_id = $request->category;
         $verse->youtube = $request->youtube;
-        $audio = $request->file('audio');
-        if($audio){
-            $fName = time() . '_' . $audio->getClientOriginalName();
-            $audio->move('uploads/audio', $fName);
-            $verse->audio = 'uploads/audio/'.$fName;
-        }
+        $verse->$audio = $request->audio;
+//        if($audio){
+//            $fName = time() . '_' . $audio->getClientOriginalName();
+//            $audio->move('uploads/audio', $fName);
+//            $verse->audio = 'uploads/audio/'.$fName;
+//        }
 
         $verse->path = $request->filepath;
         $verse->user_id = Auth::user()->id;

@@ -15,6 +15,9 @@ return [
 
     'login' => 'Enter',
     'email_address'=>'Email',
+    'Remember Me'=>'Remember Me',
+    'Forgot Your Password?'=>'Forgot Your Password?',
+    'No account?'=>'No account?',
 
     'poetry'=> 'Poetry',
     'club'=> 'Club',
@@ -47,7 +50,25 @@ return [
     'poetryclub' => 'poetry club',
     'chat'=>'chat',
     'logout'=>'logout',
-    'profile'=>'profile'
+    'profile'=>'profile',
+    'Description'=>'Description',
+    'Save'=>'Save',
+    'data'=>'Personal information',
+    'Choose'=>'Choose',
+    'search'=>'Search',
+
+    'addVerse'=>'Add verse',
+    'nameVerse'=>'Name verse',
+    'category'=>'Category',
+    'video'=>'Video',
+    'audio'=>'audio',
+    'addBook'=>'Add book',
+    'nameBook'=>'Name book',
+    'file'=>'File',
+    'welcome'=>'Welcome',
+    'price'=>'Price',
+
+
 
 
 

@@ -8,9 +8,9 @@
                      <img src="{{$book->path}}" class="img-fluid">
                 </div>
                 <div class="col-md-8">
-                {{$book->price}}
+                {{$book->price}} грн.
                 </div>
-                <button class="btn btn-success my-2 my-sm-0">Купить</button>
+                <button class="btn btn-default-shop mt-5 mb-5 ml-5">Купить</button>
             </div>
 
     </div>

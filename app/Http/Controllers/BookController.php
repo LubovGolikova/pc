@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Book;
+use Auth;
+use Validator;
+use App\User;
 class BookController extends Controller
 {
     /**
@@ -34,7 +37,23 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name'=>'required|min:3|max:150',
+            'price'=>'required|regex:/^\d+(\.\d{1,2})?$/',
+            'path'=>'mimes:pdf|max:2048',
+        ]);
+
+        if($validator->fails()){
+            return redirect('/profile/books/create')->withErrors($validator)->withInput();
+        }
+        $book = new Book();
+        $book->name = $request->name;
+        $book->price = $request->price;
+        $book->description = $request->description;
+        $book->path = $request->path;
+        $book->user_id =Auth::user()->id;
+        $book->save();
+        return redirect('/profile/books/create')->with('success','Данные сохранены');
     }
 
     /**

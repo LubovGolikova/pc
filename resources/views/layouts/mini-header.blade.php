@@ -12,7 +12,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/slick/slick.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset('assets/slick/slick-theme.css')}}"/>
     <link rel="stylesheet" href="{{asset('styles/style.css')}}">
-    <link rel="stylesheet" href="{{asset('styles/verse.style.sass')}}">
 </head>
 <body>
 {{--<a href="{{ route('auth.social', 'facebook') }}" title="Facebook">--}}
@@ -48,10 +47,10 @@
                 <a class="nav-link" href="/shop">{{ __('all.shop') }}<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item {{Request::is('www')?'active':''}}">
-                <a class="nav-link" href="#">{{ __('all.contacts') }}</a>
+                <a class="nav-link" href="/help">{{ __('all.contacts') }}</a>
             </li>
             <li class="nav-item {{Request::is('about')?'active':''}}">
-                <a class="nav-link" href="/#">{{ __('all.registration') }}</a>
+                <a class="nav-link" href="/register">{{ __('all.registration') }}</a>
             </li>
             @guest
                 <li class="nav-item"><a  href="{{ route('login') }}" class="sign-in ml-lg-auto nav-link"><i class="fa fa-sign-in" aria-hidden="true"></i> {{ __('all.login') }}</a></li>
@@ -93,8 +92,8 @@
 </nav>
  <div class="search-line fluid container d-flex flex-row justify-content-center align-items-center mb-5">
  <form class=" my-2 my-lg-0 col-lg-6  search form-inline" method="get" action="/search">
-     <input class="form-control mr-sm-2" name="s" type="text" placeholder="Пошук" aria-label="Search">
-     <button class="btn btn-outline-blue my-2 my-sm-0" type="submit">Найти</button>
+     <input class="form-control mr-sm-2" name="s" type="text" placeholder={{ __('all.search') }} aria-label="Search">
+     <button class="btn btn-outline-blue my-2 my-sm-0" type="submit">{{ __('all.search') }}</button>
  </form>
 
     </div>
