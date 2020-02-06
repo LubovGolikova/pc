@@ -58,11 +58,11 @@
 
 
             <div class="form-group row">
-            <label for="path" class="col-md-4 col-form-label text-md-right">{{ __('all.file') }}</label>
+            <label for="fileBook" class="col-md-4 col-form-label text-md-right">{{ __('all.file') }}</label>
 
             <div class="col">
-                <input id="path" type="file" class="form-control @error('audio') is-invalid @enderror" name="path">
-                @error('path')
+                <input id="fileBook" type="file" class="form-control @error('fileBook') is-invalid @enderror" name="fileBook">
+                @error('fileBook')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -73,16 +73,16 @@
 
 
         <div class="form-group row">
-                    <div class="col offset-md-4">
-        <div class="input-group">
-           <span class="input-group-btn">
-             <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-               <i class="fa fa-picture-o"></i>{{ __('all.Choose') }}
-             </a>
-           </span>
-           <input id="thumbnail" class="form-control" type="text" name="filepath">
-         </div>
-         <img id="holder" style="margin-top:15px;max-height:100px;">
+            <div class="col offset-md-4">
+                <div class="input-group">
+                   <span class="input-group-btn">
+                     <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                       <i class="fa fa-picture-o"></i>{{ __('all.Choose') }}
+                     </a>
+                   </span>
+                   <input id="thumbnail" class="form-control" type="text" name="filepath">
+                 </div>
+                 <img id="holder" style="margin-top:15px;max-height:100px;">
     </div>
     </div>
 

@@ -40,7 +40,8 @@ class BookController extends Controller
         $validator = Validator::make($request->all(), [
             'name'=>'required|min:3|max:150',
             'price'=>'required|regex:/^\d+(\.\d{1,2})?$/',
-            'path'=>'mimes:pdf|max:2048',
+            'path'=>'mimes:jpeg,png,jpg|max:2048',
+            'fileBook'=>'mimes:pdf|max:2048',
         ]);
 
         if($validator->fails()){
@@ -50,8 +51,9 @@ class BookController extends Controller
         $book->name = $request->name;
         $book->price = $request->price;
         $book->description = $request->description;
-        $book->path = $request->path;
+        $book->path = $request->filepath;
         $book->user_id =Auth::user()->id;
+        $book->fileBook = $request->fileBook;
         $book->save();
         return redirect('/profile/books/create')->with('success','Данные сохранены');
     }
